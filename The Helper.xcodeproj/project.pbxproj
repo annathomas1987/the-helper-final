@@ -25,6 +25,10 @@
 		2248FE241601A062001E4718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FDFA1601A061001E4718 /* Foundation.framework */; };
 		2248FE2C1601A062001E4718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE2A1601A062001E4718 /* InfoPlist.strings */; };
 		2248FE2F1601A062001E4718 /* The_HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE2E1601A062001E4718 /* The_HelperTests.m */; };
+		2248FE391601A087001E4718 /* 119-piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE381601A087001E4718 /* 119-piggy-bank.png */; };
+		2248FE3B1601A08E001E4718 /* 192-credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE3A1601A08E001E4718 /* 192-credit-card.png */; };
+		2248FE3E1601B2CC001E4718 /* TheHelperFirstResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE3D1601B2CC001E4718 /* TheHelperFirstResultViewController.m */; };
+		2264FBFB1601BACC00517600 /* TheHelperSecondResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2264FBFA1601BACC00517600 /* TheHelperSecondResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,27 +46,33 @@
 		2248FDF81601A061001E4718 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2248FDFA1601A061001E4718 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2248FDFC1601A061001E4718 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		2248FE001601A061001E4718 /* The Helper-Info.plist */ = {isa = PBXFileReference; path = "The Helper-Info.plist"; sourceTree = "<group>"; };
+		2248FE001601A061001E4718 /* The Helper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "The Helper-Info.plist"; sourceTree = "<group>"; };
 		2248FE021601A061001E4718 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2248FE041601A061001E4718 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2248FE061601A061001E4718 /* The Helper-Prefix.pch */ = {isa = PBXFileReference; path = "The Helper-Prefix.pch"; sourceTree = "<group>"; };
-		2248FE071601A061001E4718 /* TheHelperAppDelegate.h */ = {isa = PBXFileReference; path = TheHelperAppDelegate.h; sourceTree = "<group>"; };
+		2248FE061601A061001E4718 /* The Helper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Helper-Prefix.pch"; sourceTree = "<group>"; };
+		2248FE071601A061001E4718 /* TheHelperAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheHelperAppDelegate.h; sourceTree = "<group>"; };
 		2248FE081601A061001E4718 /* TheHelperAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheHelperAppDelegate.m; sourceTree = "<group>"; };
 		2248FE0B1601A061001E4718 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		2248FE0D1601A061001E4718 /* TheHelperFirstViewController.h */ = {isa = PBXFileReference; path = TheHelperFirstViewController.h; sourceTree = "<group>"; };
+		2248FE0D1601A061001E4718 /* TheHelperFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheHelperFirstViewController.h; sourceTree = "<group>"; };
 		2248FE0E1601A061001E4718 /* TheHelperFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheHelperFirstViewController.m; sourceTree = "<group>"; };
 		2248FE101601A061001E4718 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		2248FE121601A061001E4718 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		2248FE141601A061001E4718 /* TheHelperSecondViewController.h */ = {isa = PBXFileReference; path = TheHelperSecondViewController.h; sourceTree = "<group>"; };
+		2248FE141601A061001E4718 /* TheHelperSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheHelperSecondViewController.h; sourceTree = "<group>"; };
 		2248FE151601A061001E4718 /* TheHelperSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheHelperSecondViewController.m; sourceTree = "<group>"; };
 		2248FE171601A061001E4718 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		2248FE191601A061001E4718 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		2248FE201601A062001E4718 /* The HelperTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The HelperTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2248FE211601A062001E4718 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		2248FE291601A062001E4718 /* The HelperTests-Info.plist */ = {isa = PBXFileReference; path = "The HelperTests-Info.plist"; sourceTree = "<group>"; };
+		2248FE291601A062001E4718 /* The HelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "The HelperTests-Info.plist"; sourceTree = "<group>"; };
 		2248FE2B1601A062001E4718 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2248FE2D1601A062001E4718 /* The_HelperTests.h */ = {isa = PBXFileReference; path = The_HelperTests.h; sourceTree = "<group>"; };
+		2248FE2D1601A062001E4718 /* The_HelperTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = The_HelperTests.h; sourceTree = "<group>"; };
 		2248FE2E1601A062001E4718 /* The_HelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_HelperTests.m; sourceTree = "<group>"; };
+		2248FE381601A087001E4718 /* 119-piggy-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "119-piggy-bank.png"; path = "../../../../../Downloads/glyphish-icons/PNG icons/119-piggy-bank.png"; sourceTree = "<group>"; };
+		2248FE3A1601A08E001E4718 /* 192-credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "192-credit-card.png"; path = "../../../../../Downloads/glyphish-icons/PNG icons/192-credit-card.png"; sourceTree = "<group>"; };
+		2248FE3C1601B2CC001E4718 /* TheHelperFirstResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheHelperFirstResultViewController.h; sourceTree = "<group>"; };
+		2248FE3D1601B2CC001E4718 /* TheHelperFirstResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheHelperFirstResultViewController.m; sourceTree = "<group>"; };
+		2264FBF91601BACC00517600 /* TheHelperSecondResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheHelperSecondResultViewController.h; sourceTree = "<group>"; };
+		2264FBFA1601BACC00517600 /* TheHelperSecondResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheHelperSecondResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,8 @@
 		2248FDFE1601A061001E4718 /* The Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2248FE3A1601A08E001E4718 /* 192-credit-card.png */,
+				2248FE381601A087001E4718 /* 119-piggy-bank.png */,
 				2248FE071601A061001E4718 /* TheHelperAppDelegate.h */,
 				2248FE081601A061001E4718 /* TheHelperAppDelegate.m */,
 				2248FE0A1601A061001E4718 /* MainStoryboard.storyboard */,
@@ -133,6 +145,10 @@
 				2248FE151601A061001E4718 /* TheHelperSecondViewController.m */,
 				2248FE171601A061001E4718 /* second.png */,
 				2248FE191601A061001E4718 /* second@2x.png */,
+				2248FE3C1601B2CC001E4718 /* TheHelperFirstResultViewController.h */,
+				2248FE3D1601B2CC001E4718 /* TheHelperFirstResultViewController.m */,
+				2264FBF91601BACC00517600 /* TheHelperSecondResultViewController.h */,
+				2264FBFA1601BACC00517600 /* TheHelperSecondResultViewController.m */,
 				2248FDFF1601A061001E4718 /* Supporting Files */,
 			);
 			path = "The Helper";
@@ -245,6 +261,8 @@
 				2248FE131601A061001E4718 /* first@2x.png in Resources */,
 				2248FE181601A061001E4718 /* second.png in Resources */,
 				2248FE1A1601A061001E4718 /* second@2x.png in Resources */,
+				2248FE391601A087001E4718 /* 119-piggy-bank.png in Resources */,
+				2248FE3B1601A08E001E4718 /* 192-credit-card.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +301,8 @@
 				2248FE091601A061001E4718 /* TheHelperAppDelegate.m in Sources */,
 				2248FE0F1601A061001E4718 /* TheHelperFirstViewController.m in Sources */,
 				2248FE161601A061001E4718 /* TheHelperSecondViewController.m in Sources */,
+				2248FE3E1601B2CC001E4718 /* TheHelperFirstResultViewController.m in Sources */,
+				2264FBFB1601BACC00517600 /* TheHelperSecondResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +480,7 @@
 				2248FE341601A062001E4718 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2248FE351601A062001E4718 /* Build configuration list for PBXNativeTarget "The HelperTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +489,7 @@
 				2248FE371601A062001E4718 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

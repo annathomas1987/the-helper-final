@@ -14,10 +14,10 @@
 		2248FE051601A061001E4718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE041601A061001E4718 /* main.m */; };
 		2248FE091601A061001E4718 /* TheHelperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE081601A061001E4718 /* TheHelperAppDelegate.m */; };
 		2248FE0C1601A061001E4718 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE0A1601A061001E4718 /* MainStoryboard.storyboard */; };
-		2248FE0F1601A061001E4718 /* TheHelperFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE0E1601A061001E4718 /* TheHelperFirstViewController.m */; };
+		2248FE0F1601A061001E4718 /* LoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE0E1601A061001E4718 /* LoanViewController.m */; };
 		2248FE111601A061001E4718 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE101601A061001E4718 /* first.png */; };
 		2248FE131601A061001E4718 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE121601A061001E4718 /* first@2x.png */; };
-		2248FE161601A061001E4718 /* TheHelperSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE151601A061001E4718 /* TheHelperSecondViewController.m */; };
+		2248FE161601A061001E4718 /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE151601A061001E4718 /* TipViewController.m */; };
 		2248FE181601A061001E4718 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE171601A061001E4718 /* second.png */; };
 		2248FE1A1601A061001E4718 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE191601A061001E4718 /* second@2x.png */; };
 		2248FE221601A062001E4718 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FE211601A062001E4718 /* SenTestingKit.framework */; };
@@ -27,8 +27,9 @@
 		2248FE2F1601A062001E4718 /* The_HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE2E1601A062001E4718 /* The_HelperTests.m */; };
 		2248FE391601A087001E4718 /* 119-piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE381601A087001E4718 /* 119-piggy-bank.png */; };
 		2248FE3B1601A08E001E4718 /* 192-credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE3A1601A08E001E4718 /* 192-credit-card.png */; };
-		2248FE3E1601B2CC001E4718 /* TheHelperFirstResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE3D1601B2CC001E4718 /* TheHelperFirstResultViewController.m */; };
-		2264FBFB1601BACC00517600 /* TheHelperSecondResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2264FBFA1601BACC00517600 /* TheHelperSecondResultViewController.m */; };
+		2248FE3E1601B2CC001E4718 /* LoanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */; };
+		2264FBFB1601BACC00517600 /* TipResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2264FBFA1601BACC00517600 /* TipResultViewController.m */; };
+		22EAE87816071451009D7383 /* TheCalculatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EAE87716071451009D7383 /* TheCalculatorClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +54,12 @@
 		2248FE071601A061001E4718 /* TheHelperAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheHelperAppDelegate.h; sourceTree = "<group>"; };
 		2248FE081601A061001E4718 /* TheHelperAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheHelperAppDelegate.m; sourceTree = "<group>"; };
 		2248FE0B1601A061001E4718 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		2248FE0D1601A061001E4718 /* TheHelperFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheHelperFirstViewController.h; sourceTree = "<group>"; };
-		2248FE0E1601A061001E4718 /* TheHelperFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheHelperFirstViewController.m; sourceTree = "<group>"; };
+		2248FE0D1601A061001E4718 /* LoanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoanViewController.h; sourceTree = "<group>"; };
+		2248FE0E1601A061001E4718 /* LoanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoanViewController.m; sourceTree = "<group>"; };
 		2248FE101601A061001E4718 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		2248FE121601A061001E4718 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		2248FE141601A061001E4718 /* TheHelperSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheHelperSecondViewController.h; sourceTree = "<group>"; };
-		2248FE151601A061001E4718 /* TheHelperSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheHelperSecondViewController.m; sourceTree = "<group>"; };
+		2248FE141601A061001E4718 /* TipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
+		2248FE151601A061001E4718 /* TipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
 		2248FE171601A061001E4718 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		2248FE191601A061001E4718 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		2248FE201601A062001E4718 /* The HelperTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The HelperTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,10 +70,12 @@
 		2248FE2E1601A062001E4718 /* The_HelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_HelperTests.m; sourceTree = "<group>"; };
 		2248FE381601A087001E4718 /* 119-piggy-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "119-piggy-bank.png"; path = "../../../../../Downloads/glyphish-icons/PNG icons/119-piggy-bank.png"; sourceTree = "<group>"; };
 		2248FE3A1601A08E001E4718 /* 192-credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "192-credit-card.png"; path = "../../../../../Downloads/glyphish-icons/PNG icons/192-credit-card.png"; sourceTree = "<group>"; };
-		2248FE3C1601B2CC001E4718 /* TheHelperFirstResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheHelperFirstResultViewController.h; sourceTree = "<group>"; };
-		2248FE3D1601B2CC001E4718 /* TheHelperFirstResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheHelperFirstResultViewController.m; sourceTree = "<group>"; };
-		2264FBF91601BACC00517600 /* TheHelperSecondResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheHelperSecondResultViewController.h; sourceTree = "<group>"; };
-		2264FBFA1601BACC00517600 /* TheHelperSecondResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheHelperSecondResultViewController.m; sourceTree = "<group>"; };
+		2248FE3C1601B2CC001E4718 /* LoanResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanResultViewController.h; sourceTree = "<group>"; };
+		2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanResultViewController.m; sourceTree = "<group>"; };
+		2264FBF91601BACC00517600 /* TipResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipResultViewController.h; sourceTree = "<group>"; };
+		2264FBFA1601BACC00517600 /* TipResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipResultViewController.m; sourceTree = "<group>"; };
+		22EAE87616071451009D7383 /* TheCalculatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheCalculatorClass.h; sourceTree = "<group>"; };
+		22EAE87716071451009D7383 /* TheCalculatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheCalculatorClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,18 +140,20 @@
 				2248FE071601A061001E4718 /* TheHelperAppDelegate.h */,
 				2248FE081601A061001E4718 /* TheHelperAppDelegate.m */,
 				2248FE0A1601A061001E4718 /* MainStoryboard.storyboard */,
-				2248FE0D1601A061001E4718 /* TheHelperFirstViewController.h */,
-				2248FE0E1601A061001E4718 /* TheHelperFirstViewController.m */,
+				2248FE0D1601A061001E4718 /* LoanViewController.h */,
+				2248FE0E1601A061001E4718 /* LoanViewController.m */,
 				2248FE101601A061001E4718 /* first.png */,
 				2248FE121601A061001E4718 /* first@2x.png */,
-				2248FE141601A061001E4718 /* TheHelperSecondViewController.h */,
-				2248FE151601A061001E4718 /* TheHelperSecondViewController.m */,
+				2248FE141601A061001E4718 /* TipViewController.h */,
+				2248FE151601A061001E4718 /* TipViewController.m */,
 				2248FE171601A061001E4718 /* second.png */,
 				2248FE191601A061001E4718 /* second@2x.png */,
-				2248FE3C1601B2CC001E4718 /* TheHelperFirstResultViewController.h */,
-				2248FE3D1601B2CC001E4718 /* TheHelperFirstResultViewController.m */,
-				2264FBF91601BACC00517600 /* TheHelperSecondResultViewController.h */,
-				2264FBFA1601BACC00517600 /* TheHelperSecondResultViewController.m */,
+				2248FE3C1601B2CC001E4718 /* LoanResultViewController.h */,
+				2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */,
+				2264FBF91601BACC00517600 /* TipResultViewController.h */,
+				2264FBFA1601BACC00517600 /* TipResultViewController.m */,
+				22EAE87616071451009D7383 /* TheCalculatorClass.h */,
+				22EAE87716071451009D7383 /* TheCalculatorClass.m */,
 				2248FDFF1601A061001E4718 /* Supporting Files */,
 			);
 			path = "The Helper";
@@ -299,10 +304,11 @@
 			files = (
 				2248FE051601A061001E4718 /* main.m in Sources */,
 				2248FE091601A061001E4718 /* TheHelperAppDelegate.m in Sources */,
-				2248FE0F1601A061001E4718 /* TheHelperFirstViewController.m in Sources */,
-				2248FE161601A061001E4718 /* TheHelperSecondViewController.m in Sources */,
-				2248FE3E1601B2CC001E4718 /* TheHelperFirstResultViewController.m in Sources */,
-				2264FBFB1601BACC00517600 /* TheHelperSecondResultViewController.m in Sources */,
+				2248FE0F1601A061001E4718 /* LoanViewController.m in Sources */,
+				2248FE161601A061001E4718 /* TipViewController.m in Sources */,
+				2248FE3E1601B2CC001E4718 /* LoanResultViewController.m in Sources */,
+				2264FBFB1601BACC00517600 /* TipResultViewController.m in Sources */,
+				22EAE87816071451009D7383 /* TheCalculatorClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

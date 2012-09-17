@@ -6,11 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
-        <!--The Helper First View Controller - First-->
+        <!--Loan View Controller - First-->
         <scene sceneID="11">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
-                <viewController title="First" id="2" customClass="TheHelperFirstViewController" sceneMemberID="viewController">
+                <viewController title="First" id="2" customClass="LoanViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,8 +27,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateLoan:" destination="2" eventType="touchDragInside" id="Hgg-tc-1HK"/>
-                                    <action selector="calculateLoan:" destination="2" eventType="touchUpInside" id="Noq-Vf-s5j"/>
+                                    <action selector="calculateLoan:" destination="2" eventType="touchUpInside" id="GVA-nf-WFB"/>
                                     <segue destination="1F7-t4-sgb" kind="push" identifier="SendLoanInfo" id="fSa-sF-2J2"/>
                                 </connections>
                             </button>
@@ -58,10 +57,10 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.5" minValue="0.0" maxValue="100" id="po9-kU-Rdo">
-                                <rect key="frame" x="191" y="163" width="118" height="23"/>
+                                <rect key="frame" x="184" y="163" width="118" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="sliderValueChanged:" destination="2" eventType="valueChanged" id="6S6-YI-jNC"/>
+                                    <action selector="sliderValueChanged:" destination="2" eventType="valueChanged" id="S3z-O2-yPI"/>
                                 </connections>
                             </slider>
                         </subviews>
@@ -74,27 +73,27 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="afc-LF-2a6"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="calculateButton" destination="WwY-Sw-khS" id="GJo-W8-xax"/>
-                        <outlet property="loanTerm" destination="Osc-Ax-Ttb" id="5hZ-5f-hKJ"/>
-                        <outlet property="principalAmount" destination="0cm-cS-xJw" id="TrB-u0-zrF"/>
-                        <outlet property="rateAmount" destination="KPh-Mx-tpy" id="k1H-Tk-5Zh"/>
-                        <outlet property="rateLabel" destination="TFc-44-EQe" id="4Rh-lj-Q9i"/>
-                        <outlet property="rateSlider" destination="po9-kU-Rdo" id="6bA-Ao-zow"/>
+                        <outlet property="calculateButton" destination="WwY-Sw-khS" id="4dD-g8-N3x"/>
+                        <outlet property="loanTerm" destination="Osc-Ax-Ttb" id="YiA-WA-1Py"/>
+                        <outlet property="principalAmount" destination="0cm-cS-xJw" id="Pl3-XM-6uj"/>
+                        <outlet property="rateAmount" destination="KPh-Mx-tpy" id="qni-O0-NgZ"/>
+                        <outlet property="rateLabel" destination="TFc-44-EQe" id="yj8-zx-tCr"/>
+                        <outlet property="rateSlider" destination="po9-kU-Rdo" id="Jdv-Os-BQ5"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1179" y="-138"/>
         </scene>
-        <!--The Helper Second Result View Controller - Tip Calculator-->
+        <!--Tip Result View Controller - Tip Calculator-->
         <scene sceneID="iNG-T6-ebB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="845-NA-YDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="KsG-3b-usk" customClass="TheHelperSecondResultViewController" sceneMemberID="viewController">
+                <viewController id="KsG-3b-usk" customClass="TipResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z2x-d0-E4H">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tip : Rs. " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="y3B-No-7xK">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tip " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="y3B-No-7xK">
                                 <rect key="frame" x="50" y="82" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -108,30 +107,30 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Fwz-w2-DPi"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="calculatedTip" destination="y3B-No-7xK" id="dn6-hY-Mj2"/>
+                        <outlet property="calculatedTip" destination="y3B-No-7xK" id="yh5-Op-d9A"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1623" y="498"/>
+            <point key="canvasLocation" x="1584" y="498"/>
         </scene>
-        <!--The Helper Second View Controller - Second-->
+        <!--Tip View Controller - Second-->
         <scene sceneID="13">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
-                <viewController title="Second" id="3" customClass="TheHelperSecondViewController" sceneMemberID="viewController">
+                <viewController title="Second" id="3" customClass="TipViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.5" minValue="0.0" maxValue="100" id="Ax5-VT-XHu">
-                                <rect key="frame" x="184" y="214" width="118" height="23"/>
+                                <rect key="frame" x="184" y="173" width="118" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="sliderValueChanged:" destination="3" eventType="valueChanged" id="Bff-yL-Eoa"/>
+                                    <action selector="sliderValueChanged:" destination="3" eventType="valueChanged" id="dTD-Jg-9WK"/>
                                 </connections>
                             </slider>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="Pnm-zx-ZHa">
-                                <rect key="frame" x="20" y="209" width="97" height="31"/>
+                                <rect key="frame" x="20" y="168" width="97" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -143,7 +142,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dnm-5C-Ej5">
-                                <rect key="frame" x="106" y="318" width="108" height="37"/>
+                                <rect key="frame" x="106" y="288" width="108" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Calculate">
@@ -154,12 +153,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateTip:" destination="3" eventType="touchUpInside" id="gJd-OI-y5b"/>
+                                    <action selector="calculateTip:" destination="3" eventType="touchUpInside" id="l8v-ta-s95"/>
                                     <segue destination="KsG-3b-usk" kind="push" identifier="SendTipInfo" id="MOT-Mh-fKC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0me-Ps-xNL">
-                                <rect key="frame" x="20" y="180" width="42" height="21"/>
+                                <rect key="frame" x="20" y="128" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -175,40 +174,40 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="WzL-pY-YWR"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="billAmount" destination="pqo-9x-hQM" id="EJf-5L-bBV"/>
-                        <outlet property="tipCalculateButton" destination="dnm-5C-Ej5" id="e8v-Ny-1t8"/>
-                        <outlet property="tipRate" destination="Pnm-zx-ZHa" id="k5e-aJ-uIh"/>
-                        <outlet property="tipRateLabel" destination="0me-Ps-xNL" id="Ijj-HX-uRd"/>
-                        <outlet property="tipSlider" destination="Ax5-VT-XHu" id="6Tz-PP-IXz"/>
+                        <outlet property="billAmount" destination="pqo-9x-hQM" id="iTX-wC-fTM"/>
+                        <outlet property="tipCalculateButton" destination="dnm-5C-Ej5" id="e8u-XX-BJZ"/>
+                        <outlet property="tipRate" destination="Pnm-zx-ZHa" id="Aqm-8h-BhH"/>
+                        <outlet property="tipRateLabel" destination="0me-Ps-xNL" id="3iK-xp-5Vr"/>
+                        <outlet property="tipSlider" destination="Ax5-VT-XHu" id="5dn-yc-dr7"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1179" y="498"/>
         </scene>
-        <!--The Helper First Result View Controller - Loan Calculator-->
+        <!--Loan Result View Controller - Loan Calculator-->
         <scene sceneID="ZaL-xN-8hd">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qx6-f1-M5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="1F7-t4-sgb" customClass="TheHelperFirstResultViewController" sceneMemberID="viewController">
+                <viewController id="1F7-t4-sgb" customClass="LoanResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H94-ut-2YT">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="EMI : Rs. " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Sui-xZ-x1n">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="EMI " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Sui-xZ-x1n">
                                 <rect key="frame" x="20" y="85" width="262" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Interest Payable : Rs.  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8Gl-wk-quD">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Interest Payable " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8Gl-wk-quD">
                                 <rect key="frame" x="20" y="136" width="274" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Payment : Rs. " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="VDM-Dd-4QO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Payment " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="VDM-Dd-4QO">
                                 <rect key="frame" x="20" y="196" width="268" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -222,9 +221,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="mh6-PT-RgR"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="calculatedEMI" destination="Sui-xZ-x1n" id="x5n-dt-tlH"/>
-                        <outlet property="calculatedInterest" destination="8Gl-wk-quD" id="thH-hP-Cdm"/>
-                        <outlet property="calculatedPayment" destination="VDM-Dd-4QO" id="nys-Q7-0oc"/>
+                        <outlet property="calculatedEmi" destination="Sui-xZ-x1n" id="psD-a3-CvO"/>
+                        <outlet property="calculatedInterest" destination="8Gl-wk-quD" id="aB8-P9-Eh9"/>
+                        <outlet property="calculatedPayment" destination="VDM-Dd-4QO" id="Fjk-2a-pKj"/>
                     </connections>
                 </viewController>
             </objects>
@@ -295,16 +294,16 @@
         <image name="192-credit-card.png" width="28" height="18"/>
     </resources>
     <classes>
-        <class className="TheHelperFirstResultViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TheHelperFirstResultViewController.h"/>
+        <class className="LoanResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoanResultViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="calculatedEMI" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="calculatedEmi" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="calculatedInterest" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="calculatedPayment" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="TheHelperFirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TheHelperFirstViewController.h"/>
+        <class className="LoanViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoanViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
                 <relationship kind="action" name="calculateLoan:"/>
@@ -317,14 +316,14 @@
                 <relationship kind="outlet" name="rateSlider" candidateClass="UISlider"/>
             </relationships>
         </class>
-        <class className="TheHelperSecondResultViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TheHelperSecondResultViewController.h"/>
+        <class className="TipResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TipResultViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="calculatedTip" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="TheHelperSecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TheHelperSecondViewController.h"/>
+        <class className="TipViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TipViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
                 <relationship kind="action" name="calculateTip:"/>

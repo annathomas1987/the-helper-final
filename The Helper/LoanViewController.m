@@ -25,7 +25,7 @@
 
 - (void)calculateLoan:(id)sender   
 {  
-    TheCalculatorClass *calculatorObject;
+    TheCalculatorClass *calculatorObject = [[TheCalculatorClass alloc]init];
     long int principal = [[principalAmount text] longLongValue];  
     float rate = [[rateAmount text] floatValue];
     int time = [[loanTerm text] intValue];

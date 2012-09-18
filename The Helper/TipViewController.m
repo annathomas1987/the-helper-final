@@ -23,11 +23,10 @@
 
 - (void)calculateTip:(id)sender   
 {  
-    TheCalculatorClass *calculateObject;
-    long amount = [[billAmount text] intValue];
+    TheCalculatorClass *calculateObject=[[TheCalculatorClass alloc]init];
+    long int amount = [[billAmount text] longLongValue];
     float rate = [[tipRate text] floatValue];
     tipToGive = [calculateObject calculate:amount Tip:rate];
-    NSLog(@"Tip to give : %d", tipToGive);
 }  
 
 - (void)backgroundTouchedHideKeyboard:(id)sender  

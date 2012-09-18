@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+
+const int monthlyRate, centPercent;
+
 @interface TheCalculatorClass : NSDecimalNumber {
  
     int Emi, totalPayment, totalInterest, Tip;
-    const int monthlyRate, centPercent;
 }
 
 - (int) calculate:(long int)billAmount Tip: (float)tipRate;

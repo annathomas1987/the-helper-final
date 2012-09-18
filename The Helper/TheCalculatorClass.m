@@ -7,9 +7,7 @@
 //
 
 #import "TheCalculatorClass.h"
-
-const int monthlyRate = 1200;   //1200 = 12 * 100
-const int centPercent = 100;    //for percentage calculations
+#import "constants.m"
 
 @implementation TheCalculatorClass
 

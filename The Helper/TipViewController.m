@@ -8,6 +8,7 @@
 
 #import "TipViewController.h"
 #import "TheCalculatorClass.h"
+#import "constants.m"
 
 @interface TipViewController ()
 
@@ -29,8 +30,30 @@
     tipToGive = [calculateObject calculate:amount Tip:rate];
 }  
 
+- (void) checkAndChangeSlider {
+    float sliderValue = [[tipRate text] floatValue];
+    if (sliderValue > maxValue) { sliderValue = maxValue; }
+    if (sliderValue < minValue) { sliderValue = minValue; }
+    [tipSlider setValue:sliderValue];
+    tipRate.text = [NSString stringWithFormat:@"%.1f", sliderValue];
+
+}
+
+- (void) changeButtonStatus {
+    if (!([billAmount.text isEqualToString:blank] || [tipRate.text isEqualToString:blank])) {
+        tipCalculateButton.enabled = YES;
+        tipCalculateButton.alpha = enableValue;
+    } 
+    else {
+        tipCalculateButton.enabled = NO;
+        tipCalculateButton.alpha = disableValue;
+    }
+
+}
+
 - (void)backgroundTouchedHideKeyboard:(id)sender  
 {  
+    [self checkAndChangeSlider];
     [billAmount resignFirstResponder];  
     [tipRate resignFirstResponder];
 }  
@@ -40,7 +63,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"SendTipInfo"]) {
+    if ([[segue identifier] isEqualToString:TipResultPage]) {
         TipResultViewController *tipObject = [segue destinationViewController];
         tipObject.infoRequest = [NSNumber numberWithInteger:tipToGive];
     }
@@ -50,6 +73,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    tipCalculateButton.enabled = NO;
+    tipCalculateButton.alpha = disableValue;
+    
 }
 
 - (void)viewDidUnload

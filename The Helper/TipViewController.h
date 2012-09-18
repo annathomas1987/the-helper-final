@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TipResultViewController.h"
 
+
 @interface TipViewController : UIViewController{
     
     UITextField *billAmount;  
@@ -28,5 +29,7 @@
 - (IBAction) sliderValueChanged:(id)sender; 
 - (IBAction) calculateTip:(id)sender;  
 - (IBAction) backgroundTouchedHideKeyboard:(id)sender;
+- (void) checkAndChangeSlider;
+- (void) changeButtonStatus;
 
 @end

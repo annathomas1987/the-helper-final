@@ -30,6 +30,8 @@
 - (IBAction) sliderValueChanged:(id)sender;
 - (IBAction) calculateLoan:(id)sender;  
 - (IBAction) backgroundTouchedHideKeyboard:(id)sender;
+- (void) checkAndChangeSlider;
+- (void) changeButtonStatus;
 
 @end
 

@@ -29,6 +29,7 @@
 		2248FE3B1601A08E001E4718 /* 192-credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE3A1601A08E001E4718 /* 192-credit-card.png */; };
 		2248FE3E1601B2CC001E4718 /* LoanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */; };
 		2264FBFB1601BACC00517600 /* TipResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2264FBFA1601BACC00517600 /* TipResultViewController.m */; };
+		22CA92B51608A0BC0009A6AB /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA92B41608A0BC0009A6AB /* constants.m */; };
 		22EAE87816071451009D7383 /* TheCalculatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EAE87716071451009D7383 /* TheCalculatorClass.m */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanResultViewController.m; sourceTree = "<group>"; };
 		2264FBF91601BACC00517600 /* TipResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipResultViewController.h; sourceTree = "<group>"; };
 		2264FBFA1601BACC00517600 /* TipResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipResultViewController.m; sourceTree = "<group>"; };
+		22CA92B31608A0BC0009A6AB /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		22CA92B41608A0BC0009A6AB /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		22EAE87616071451009D7383 /* TheCalculatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheCalculatorClass.h; sourceTree = "<group>"; };
 		22EAE87716071451009D7383 /* TheCalculatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheCalculatorClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,17 +146,19 @@
 				2248FE0D1601A061001E4718 /* LoanViewController.h */,
 				2248FE0E1601A061001E4718 /* LoanViewController.m */,
 				2248FE101601A061001E4718 /* first.png */,
-				2248FE121601A061001E4718 /* first@2x.png */,
 				2248FE141601A061001E4718 /* TipViewController.h */,
 				2248FE151601A061001E4718 /* TipViewController.m */,
-				2248FE171601A061001E4718 /* second.png */,
-				2248FE191601A061001E4718 /* second@2x.png */,
+				2248FE121601A061001E4718 /* first@2x.png */,
 				2248FE3C1601B2CC001E4718 /* LoanResultViewController.h */,
 				2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */,
 				2264FBF91601BACC00517600 /* TipResultViewController.h */,
 				2264FBFA1601BACC00517600 /* TipResultViewController.m */,
+				2248FE171601A061001E4718 /* second.png */,
+				2248FE191601A061001E4718 /* second@2x.png */,
 				22EAE87616071451009D7383 /* TheCalculatorClass.h */,
 				22EAE87716071451009D7383 /* TheCalculatorClass.m */,
+				22CA92B31608A0BC0009A6AB /* constants.h */,
+				22CA92B41608A0BC0009A6AB /* constants.m */,
 				2248FDFF1601A061001E4718 /* Supporting Files */,
 			);
 			path = "The Helper";
@@ -309,6 +314,7 @@
 				2248FE3E1601B2CC001E4718 /* LoanResultViewController.m in Sources */,
 				2264FBFB1601BACC00517600 /* TipResultViewController.m in Sources */,
 				22EAE87816071451009D7383 /* TheCalculatorClass.m in Sources */,
+				22CA92B51608A0BC0009A6AB /* constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "LoanViewController.h"
 #import "TheCalculatorClass.h"
+#import "constants.m"
 
 @interface LoanViewController ()
 
@@ -34,8 +35,29 @@
     totalPayment = [calculatorObject calculateTotalPayment:principal];
 }  
 
-- (void)backgroundTouchedHideKeyboard:(id)sender  
-{  
+- (void) checkAndChangeSlider {
+    float sliderValue = [[rateAmount text] floatValue];
+    if (sliderValue > maxValue){ sliderValue = maxValue;}
+    if (sliderValue < minValue) {sliderValue = minValue;}
+    [rateSlider setValue:sliderValue];
+    rateAmount.text = [NSString stringWithFormat:@"%.1f", sliderValue];
+}
+
+- (void) changeButtonStatus {
+    
+    if (!([principalAmount.text isEqualToString:blank] || [rateAmount.text isEqualToString:blank] || [loanTerm.text isEqualToString:blank])) {
+        calculateButton.enabled = YES;
+        calculateButton.alpha = enableValue;
+    } 
+    else {
+        calculateButton.enabled = NO;
+        calculateButton.alpha = disableValue;
+    }
+
+}
+- (void) backgroundTouchedHideKeyboard:(id)sender {     
+    [self checkAndChangeSlider];
+    [self changeButtonStatus];
     [principalAmount resignFirstResponder];  
     [rateAmount resignFirstResponder];
     [loanTerm resignFirstResponder];
@@ -46,7 +68,7 @@
 }  
 
  -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"SendLoanInfo"]) {
+    if ([[segue identifier] isEqualToString:LoanResultPage]) {
         LoanResultViewController *loanObject = [segue destinationViewController];
         loanObject.Emi = [NSNumber numberWithInteger:emi];
         loanObject.Interest = [NSNumber numberWithInteger:totalInterest];
@@ -57,6 +79,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    calculateButton.enabled = NO;
+    calculateButton.alpha = disableValue;
 }
 
 - (void)viewDidUnload

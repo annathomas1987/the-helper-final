@@ -8,6 +8,7 @@
 
 #import "LoanResultViewController.h"
 
+
 @interface LoanResultViewController ()
 
 @end
@@ -32,12 +33,16 @@
 
 - (void)viewDidLoad
 {
-   
-    self.calculatedEmi.text = [NSString stringWithFormat:@"EMI : Rs. %@ /-", [self.Emi description]];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.bounds];
+    UIImage *bgImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+    self.calculatedEmi.text = [NSString stringWithFormat:@"%@", [self.Emi description]];
     
-    self.calculatedInterest.text = [NSString stringWithFormat:@"Total Interest : Rs. %@ /-", [self.Interest description]];
+    self.calculatedInterest.text = [NSString stringWithFormat:@"%@", [self.Interest description]];
     
-    self.calculatedPayment.text = [NSString stringWithFormat:@"Total Amount Payable : Rs. %@ /-", [self.Payment description]];
+    self.calculatedPayment.text = [NSString stringWithFormat:@"%@", [self.Payment description]];
     
     [super viewDidLoad];
     

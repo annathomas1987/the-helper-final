@@ -11,10 +11,12 @@
 
 @interface TheCalculatorClass : NSDecimalNumber {
  
-    int Emi, totalPayment, totalInterest, Tip;
+    int Emi, totalPayment, totalInterest;
+    float Tip, totalAmount;
 }
 
-- (int) calculate:(long int)billAmount Tip: (float)tipRate;
+- (float) calculate:(long int)billAmount Tip: (float)tipRate;
+- (float) calculateTotalBill:(long int)amount;
 - (int) calculate:(long int)principal Emi:(float)rate formula:(int)time;
 - (int) calculate:(int)time totalInterest:(long int)principal;
 - (int) calculateTotalPayment:(long int)principal;

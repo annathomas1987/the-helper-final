@@ -8,7 +8,7 @@
 
 #import "TipViewController.h"
 #import "TheCalculatorClass.h"
-#import "constants.m"
+#import "constants.h"
 
 @interface TipViewController ()
 
@@ -27,7 +27,9 @@
     TheCalculatorClass *calculateObject=[[TheCalculatorClass alloc]init];
     long int amount = [[billAmount text] longLongValue];
     float rate = [[tipRate text] floatValue];
+    //call the function to calculate the tip
     tipToGive = [calculateObject calculate:amount Tip:rate];
+    totalAmount = [calculateObject calculateTotalBill:amount];
 }  
 
 - (void) checkAndChangeSlider {
@@ -54,6 +56,7 @@
 - (void)backgroundTouchedHideKeyboard:(id)sender  
 {  
     [self checkAndChangeSlider];
+    [self changeButtonStatus];
     [billAmount resignFirstResponder];  
     [tipRate resignFirstResponder];
 }  
@@ -65,7 +68,9 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:TipResultPage]) {
         TipResultViewController *tipObject = [segue destinationViewController];
-        tipObject.infoRequest = [NSNumber numberWithInteger:tipToGive];
+        tipObject.tip = [NSNumber numberWithInteger:tipToGive];
+        tipObject.totalAmount = [NSNumber numberWithInteger:totalAmount];
+        //tipObject
     }
 }
 
@@ -73,6 +78,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    tipRate.keyboardType = UIKeyboardTypeDecimalPad;
     tipCalculateButton.enabled = NO;
     tipCalculateButton.alpha = disableValue;
     

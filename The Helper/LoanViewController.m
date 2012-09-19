@@ -8,7 +8,7 @@
 
 #import "LoanViewController.h"
 #import "TheCalculatorClass.h"
-#import "constants.m"
+#import "constants.h"
 
 @interface LoanViewController ()
 
@@ -30,8 +30,11 @@
     long int principal = [[principalAmount text] longLongValue];  
     float rate = [[rateAmount text] floatValue];
     int time = [[loanTerm text] intValue];
+    //call the function to calculate emi
     emi = [calculatorObject calculate:principal Emi:rate formula:time];
-    totalInterest = [calculatorObject calculate:time totalInterest:principal];
+    //call the function to calculate total Interest
+    totalInterest = [calculatorObject calculate:time totalInterest:principal];   
+    // call the function to calculate total Payment
     totalPayment = [calculatorObject calculateTotalPayment:principal];
 }  
 
@@ -79,6 +82,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    rateAmount.keyboardType = UIKeyboardTypeDecimalPad;
     calculateButton.enabled = NO;
     calculateButton.alpha = disableValue;
 }

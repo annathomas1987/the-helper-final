@@ -7,15 +7,20 @@
 //
 
 #import "TheCalculatorClass.h"
-#import "constants.m"
+#import "constants.h"
 
 @implementation TheCalculatorClass
 
-- (int)calculate:(long int)billAmount Tip: (float)tipRate  
+- (float)calculate:(long int)billAmount Tip: (float)tipRate  
 {  
     Tip = billAmount * tipRate /centPercent;
     return Tip;
 } 
+
+- (float) calculateTotalBill:(long int)bill {
+    totalAmount = bill + Tip;
+    return totalAmount;
+}
 
 - (int)calculate:(long int)principal Emi:(float)rate formula:(int)time   
 {  

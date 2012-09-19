@@ -17,7 +17,7 @@
     IBOutlet UITextField *tipRate;
     IBOutlet UISlider *tipSlider;
     UIButton *tipCalculateButton;
-    int tipToGive;
+    float tipToGive, totalAmount;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *billAmount;  

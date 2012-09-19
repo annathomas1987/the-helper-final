@@ -11,10 +11,14 @@
 @interface TipResultViewController : UIViewController {
     
     UILabel *calculatedTip;
-    id infoRequest;
+    UILabel *calculatedTotalAmount;
+    id tip;
+    id totalAmount;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *calculatedTip;
-@property (nonatomic, retain) id infoRequest;
+@property (nonatomic, retain) id tip;
+@property (strong, nonatomic) IBOutlet UILabel *calculatedTotalAmount;
+@property (nonatomic, retain) id totalAmount;
 
 @end

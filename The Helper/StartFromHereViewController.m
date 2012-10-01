@@ -9,6 +9,7 @@
 
 #import "StartFromHereViewController.h"
 
+
 @interface StartFromHereViewController ()
 
 @end
@@ -35,6 +36,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"goToMainPage"]) {
+        LoanViewController *mainPage = [segue destinationViewController];
+    }
+} */
 
 - (void)viewDidUnload {
     [self setGetStarted:nil];

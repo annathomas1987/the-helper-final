@@ -35,6 +35,9 @@
 		2290A4F516098C0D0063D30E /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F316098C0D0063D30E /* TipViewController.m */; };
 		2290A4FA16098C860063D30E /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F716098C860063D30E /* constants.m */; };
 		2290A4FB16098C860063D30E /* TheCalculatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F916098C860063D30E /* TheCalculatorClass.m */; };
+		2295DF651619648E0093809D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2295DF641619648E0093809D /* Default.png */; };
+		2295DF68161964EF0093809D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2295DF67161964EF0093809D /* Default@2x.png */; };
+		2295DF6A161965220093809D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2295DF69161965220093809D /* Default-568h@2x.png */; };
 		22E68646160AE52600D706E8 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22E68645160AE52600D706E8 /* background.jpg */; };
 		22E68648160AE53A00D706E8 /* indian rupee black.gif in Resources */ = {isa = PBXBuildFile; fileRef = 22E68647160AE53A00D706E8 /* indian rupee black.gif */; };
 		22E6864A160AE54600D706E8 /* happysmiley.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22E68649160AE54600D706E8 /* happysmiley.jpg */; };
@@ -92,6 +95,9 @@
 		2290A4F716098C860063D30E /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		2290A4F816098C860063D30E /* TheCalculatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheCalculatorClass.h; sourceTree = "<group>"; };
 		2290A4F916098C860063D30E /* TheCalculatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheCalculatorClass.m; sourceTree = "<group>"; };
+		2295DF641619648E0093809D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2295DF67161964EF0093809D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2295DF69161965220093809D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		22E68645160AE52600D706E8 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		22E68647160AE53A00D706E8 /* indian rupee black.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "indian rupee black.gif"; sourceTree = "<group>"; };
 		22E68649160AE54600D706E8 /* happysmiley.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = happysmiley.jpg; sourceTree = "<group>"; };
@@ -125,6 +131,9 @@
 		2248FDE91601A061001E4718 = {
 			isa = PBXGroup;
 			children = (
+				2295DF69161965220093809D /* Default-568h@2x.png */,
+				2295DF67161964EF0093809D /* Default@2x.png */,
+				2295DF641619648E0093809D /* Default.png */,
 				222342751615779E00978AF5 /* smileyBackground.jpg */,
 				22345E7016147FD700CC12FD /* icon_114x114_trans.png */,
 				22345E6E16147FD000CC12FD /* 2730-57x57x32.png */,
@@ -306,6 +315,9 @@
 				22345E6F16147FD000CC12FD /* 2730-57x57x32.png in Resources */,
 				22345E7116147FD700CC12FD /* icon_114x114_trans.png in Resources */,
 				222342761615779E00978AF5 /* smileyBackground.jpg in Resources */,
+				2295DF651619648E0093809D /* Default.png in Resources */,
+				2295DF68161964EF0093809D /* Default@2x.png in Resources */,
+				2295DF6A161965220093809D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

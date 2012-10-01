@@ -24,6 +24,8 @@
 @synthesize calculateButton;
 @synthesize scrollView;
 @synthesize activeField;
+@synthesize warningForLoan;
+@synthesize warningForPrincipal;
 
 - (void)calculateLoan:(id)sender   
 {
@@ -41,18 +43,18 @@
 }  
 
 - (void) checkAndChangeSlider {
-    
-    float sliderValue = [[rateAmount text] floatValue];
-    if (sliderValue > maxValue){ sliderValue = maxValue;}
-    if (sliderValue < minValue) {sliderValue = minValue;}
-    [rateSlider setValue:sliderValue];
-    rateAmount.text = [NSString stringWithFormat:@"%.1f", sliderValue];
+    if (![rateAmount.text isEqualToString:@""]) {
+        float sliderValue = [[rateAmount text] floatValue];
+        if (sliderValue > maxValue){ sliderValue = maxValue;}
+        if (sliderValue < minValue) {sliderValue = minValue;}
+        [rateSlider setValue:sliderValue];
+        rateAmount.text = [NSString stringWithFormat:@"%.1f", sliderValue];
+    }
 }
 
 - (void) changeButtonStatus {
-    
-    
-    if (!(principalAmount.text == nil || rateAmount.text == nil || loanTerm.text == nil)) {
+    if (!([principalAmount.text isEqualToString:@""] || [rateAmount.text isEqualToString:@""] || [loanTerm.text isEqualToString:@""])) {
+        NSLog(@"h%@--%@--%@h", principalAmount.text,rateAmount.text, loanTerm.text);
         calculateButton.enabled = YES;
         calculateButton.alpha = enableValue;
     } 
@@ -60,12 +62,12 @@
         calculateButton.enabled = NO;
         calculateButton.alpha = disableValue;
     }
-
+    NSLog(@"the value : %d",!([principalAmount.text isEqualToString:@""]  || [rateAmount.text isEqualToString:@""] || [loanTerm.text isEqualToString:@""]));
 }
 
 
 - (void) backgroundTouchedHideKeyboard:(id)sender {
-    
+    NSLog(@"touched");
     [self checkAndChangeSlider];
     [self changeButtonStatus];
     [principalAmount resignFirstResponder];  
@@ -93,19 +95,25 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    int intValue;
     activeField = nil;
-    if (textField == principalAmount || textField == rateAmount) {
-        NSLog(@"***************textFieldDidEndEditing:");
-        NSString *regEx = @"[0-9]{+}.[0-9]{*}";
-        NSRange range = [textField.text rangeOfString:regEx options:NSRegularExpressionSearch];
-        if (range.location == NSNotFound) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid value" message:@"Enter only positive decimal numbers" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-            //return NO;
-            textField.text = nil;
+    if (textField.text.length>0 && [[NSScanner scannerWithString:textField.text] scanInt:&intValue]) {
+        if (textField == principalAmount) {
+            [warningForPrincipal setHidden:YES];
         }
+        else {
+             [warningForLoan setHidden:YES];
+        }       
     }
-    //return YES;
+    else {
+        if (textField == principalAmount) {
+            [warningForPrincipal setHidden:NO];
+        }
+        else {
+            [warningForLoan setHidden:NO];
+        }
+        textField.text = nil;
+    }
 }
 
 - (void)keyboardDidShow:(NSNotification *)aNotification
@@ -139,18 +147,22 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"**********viewDidLoad");
     [super viewDidLoad];
+    [warningForLoan setHidden:YES];
+    [warningForPrincipal setHidden:YES];
     rateAmount.keyboardType = UIKeyboardTypeDecimalPad;
     calculateButton.enabled = NO;
     calculateButton.alpha = disableValue;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:)name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidShowNotification object:nil];
-    self.tabBarController.navigationItem.hidesBackButton = YES;
-    //self.tabBarController.title = @"Loan Calculator";
 }
 - (void)viewDidUnload
 {
+    warningForPrincipal = nil;
+    [self setWarningForPrincipal:nil];
+    warningForLoan = nil;
+    [self setWarningForPrincipal:nil];
+    [self setWarningForLoan:nil];
     [super viewDidUnload];
     self.principalAmount = nil;
     self.rateAmount = nil;

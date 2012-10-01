@@ -18,13 +18,17 @@
     IBOutlet UISlider *tipSlider;
     UIButton *tipCalculateButton;
     float tipToGive, totalAmount;
+    UITextField *activeField;
+    UILabel *warningForBill;
 }
+@property (nonatomic, retain) IBOutlet UILabel *warningForBill;
 
 @property (nonatomic, retain) IBOutlet UITextField *billAmount;  
 @property (nonatomic, retain) IBOutlet UILabel *tipRateLabel;  
 @property (nonatomic, retain) IBOutlet UITextField *tipRate;
 @property (nonatomic, retain) IBOutlet UISlider *tipSlider;
 @property (nonatomic, retain) IBOutlet UIButton *tipCalculateButton;
+@property (nonatomic, retain) IBOutlet UITextField *activeField;
 
 - (IBAction) sliderValueChanged:(id)sender; 
 - (IBAction) calculateTip:(id)sender;  

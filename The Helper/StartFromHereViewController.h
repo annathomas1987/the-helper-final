@@ -8,6 +8,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoanViewController.h"
 
 @interface StartFromHereViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIButton *getStarted;

@@ -21,6 +21,8 @@
 @synthesize tipRate;
 @synthesize tipSlider;
 @synthesize tipCalculateButton;
+@synthesize warningForLoan;
+@synthesize activeField;
 
 - (void)calculateTip:(id)sender   
 {  
@@ -85,8 +87,34 @@
     //self.tabBarController.title = @"Tip Calculator";
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    activeField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    int intValue;
+    activeField = nil;
+    if (textField.text.length>0 && [[NSScanner scannerWithString:textField.text] scanInt:&intValue]) {
+        if (textField == billAmount) {
+            [warningForBill setHidden:YES];
+        }
+    }
+    else {
+        if (textField == principalAmount) {
+            [warningForPrincipal setHidden:NO];
+        }
+        else {
+            [warningForLoan setHidden:NO];
+        }
+        textField.text = nil;
+    }
+}
+
 - (void)viewDidUnload
 {
+    [self setWarningForLoan:nil];
     [super viewDidUnload];
     self.billAmount = nil;
     self.tipRate = nil;

@@ -14,7 +14,6 @@ const float enableValue = 1.0;
 NSString * const TipResultPage = @"SendTipInfo";
 const int minValue = 0;
 const int maxValue = 100;
-NSString * const blank = @"";
 const int monthlyRate = 1200;   //1200 = 12 * 100
 const int centPercent = 100;    //for percentage calculations
 

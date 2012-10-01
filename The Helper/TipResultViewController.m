@@ -38,6 +38,7 @@
     self.calculatedTip.text = [NSString stringWithFormat:@"%@", [self.tip description]];
     self.calculatedTotalAmount.text = [NSString stringWithFormat:@"%@",[self.totalAmount description]];
     [super viewDidLoad];
+    
 }
 
 - (void)viewDidUnload

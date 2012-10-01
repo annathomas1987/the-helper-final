@@ -43,7 +43,7 @@
     self.calculatedInterest.text = [NSString stringWithFormat:@"%@", [self.Interest description]];
     
     self.calculatedPayment.text = [NSString stringWithFormat:@"%@", [self.Payment description]];
-    
+   
     [super viewDidLoad];
     
 }

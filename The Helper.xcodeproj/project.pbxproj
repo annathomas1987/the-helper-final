@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		220DBEC41609A573002128CF /* happysmiley.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 220DBEC21609A573002128CF /* happysmiley.jpg */; };
-		220DBEC51609A573002128CF /* sadsmiley.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 220DBEC31609A573002128CF /* sadsmiley.jpg */; };
-		220DBED01609BEF5002128CF /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 220DBECF1609BEF5002128CF /* background.jpg */; };
-		220DBED61609C095002128CF /* indian rupee black.gif in Resources */ = {isa = PBXBuildFile; fileRef = 220DBED51609C095002128CF /* indian rupee black.gif */; };
+		222342761615779E00978AF5 /* smileyBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 222342751615779E00978AF5 /* smileyBackground.jpg */; };
+		2223427A16157B2800978AF5 /* StartFromHereViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223427916157B2800978AF5 /* StartFromHereViewController.m */; };
+		22345E6F16147FD000CC12FD /* 2730-57x57x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 22345E6E16147FD000CC12FD /* 2730-57x57x32.png */; };
+		22345E7116147FD700CC12FD /* icon_114x114_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 22345E7016147FD700CC12FD /* icon_114x114_trans.png */; };
 		2248FDF91601A061001E4718 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FDF81601A061001E4718 /* UIKit.framework */; };
 		2248FDFB1601A061001E4718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FDFA1601A061001E4718 /* Foundation.framework */; };
 		2248FDFD1601A061001E4718 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FDFC1601A061001E4718 /* CoreGraphics.framework */; };
@@ -27,14 +27,18 @@
 		2248FE241601A062001E4718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FDFA1601A061001E4718 /* Foundation.framework */; };
 		2248FE2C1601A062001E4718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE2A1601A062001E4718 /* InfoPlist.strings */; };
 		2248FE2F1601A062001E4718 /* The_HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE2E1601A062001E4718 /* The_HelperTests.m */; };
-		2248FE391601A087001E4718 /* 119-piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE381601A087001E4718 /* 119-piggy-bank.png */; };
-		2248FE3B1601A08E001E4718 /* 192-credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE3A1601A08E001E4718 /* 192-credit-card.png */; };
 		2248FE3E1601B2CC001E4718 /* LoanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */; };
 		2264FBFB1601BACC00517600 /* TipResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2264FBFA1601BACC00517600 /* TipResultViewController.m */; };
+		228F33D1161452AF00CDA184 /* 192-credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 228F33D0161452AF00CDA184 /* 192-credit-card.png */; };
+		228F33D3161452C900CDA184 /* 119-piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 228F33D2161452C900CDA184 /* 119-piggy-bank.png */; };
 		2290A4F416098C0D0063D30E /* LoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F116098C0D0063D30E /* LoanViewController.m */; };
 		2290A4F516098C0D0063D30E /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F316098C0D0063D30E /* TipViewController.m */; };
 		2290A4FA16098C860063D30E /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F716098C860063D30E /* constants.m */; };
 		2290A4FB16098C860063D30E /* TheCalculatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F916098C860063D30E /* TheCalculatorClass.m */; };
+		22E68646160AE52600D706E8 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22E68645160AE52600D706E8 /* background.jpg */; };
+		22E68648160AE53A00D706E8 /* indian rupee black.gif in Resources */ = {isa = PBXBuildFile; fileRef = 22E68647160AE53A00D706E8 /* indian rupee black.gif */; };
+		22E6864A160AE54600D706E8 /* happysmiley.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22E68649160AE54600D706E8 /* happysmiley.jpg */; };
+		22E6864C160AE55100D706E8 /* sadsmiley.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22E6864B160AE55100D706E8 /* sadsmiley.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		220DBEC21609A573002128CF /* happysmiley.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = happysmiley.jpg; path = ../../../../../Downloads/happysmiley.jpg; sourceTree = "<group>"; };
-		220DBEC31609A573002128CF /* sadsmiley.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sadsmiley.jpg; path = ../../../../../Downloads/sadsmiley.jpg; sourceTree = "<group>"; };
-		220DBECF1609BEF5002128CF /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../../../Downloads/background.jpg; sourceTree = "<group>"; };
-		220DBED51609C095002128CF /* indian rupee black.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "indian rupee black.gif"; path = "../../../../../Downloads/indian rupee black.gif"; sourceTree = "<group>"; };
+		222342751615779E00978AF5 /* smileyBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smileyBackground.jpg; sourceTree = "<group>"; };
+		2223427816157B2800978AF5 /* StartFromHereViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartFromHereViewController.h; sourceTree = "<group>"; };
+		2223427916157B2800978AF5 /* StartFromHereViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartFromHereViewController.m; sourceTree = "<group>"; };
+		22345E6E16147FD000CC12FD /* 2730-57x57x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2730-57x57x32.png"; sourceTree = "<group>"; };
+		22345E7016147FD700CC12FD /* icon_114x114_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_114x114_trans.png; sourceTree = "<group>"; };
 		2248FDF41601A061001E4718 /* The Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2248FDF81601A061001E4718 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2248FDFA1601A061001E4718 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -73,12 +78,12 @@
 		2248FE2B1601A062001E4718 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2248FE2D1601A062001E4718 /* The_HelperTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = The_HelperTests.h; sourceTree = "<group>"; };
 		2248FE2E1601A062001E4718 /* The_HelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_HelperTests.m; sourceTree = "<group>"; };
-		2248FE381601A087001E4718 /* 119-piggy-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "119-piggy-bank.png"; path = "../../../../../Downloads/glyphish-icons/PNG icons/119-piggy-bank.png"; sourceTree = "<group>"; };
-		2248FE3A1601A08E001E4718 /* 192-credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "192-credit-card.png"; path = "../../../../../Downloads/glyphish-icons/PNG icons/192-credit-card.png"; sourceTree = "<group>"; };
 		2248FE3C1601B2CC001E4718 /* LoanResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanResultViewController.h; sourceTree = "<group>"; };
 		2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanResultViewController.m; sourceTree = "<group>"; };
 		2264FBF91601BACC00517600 /* TipResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipResultViewController.h; sourceTree = "<group>"; };
 		2264FBFA1601BACC00517600 /* TipResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipResultViewController.m; sourceTree = "<group>"; };
+		228F33D0161452AF00CDA184 /* 192-credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "192-credit-card.png"; sourceTree = "<group>"; };
+		228F33D2161452C900CDA184 /* 119-piggy-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "119-piggy-bank.png"; sourceTree = "<group>"; };
 		2290A4F016098C0D0063D30E /* LoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanViewController.h; sourceTree = "<group>"; };
 		2290A4F116098C0D0063D30E /* LoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanViewController.m; sourceTree = "<group>"; };
 		2290A4F216098C0D0063D30E /* TipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
@@ -87,6 +92,10 @@
 		2290A4F716098C860063D30E /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		2290A4F816098C860063D30E /* TheCalculatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheCalculatorClass.h; sourceTree = "<group>"; };
 		2290A4F916098C860063D30E /* TheCalculatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheCalculatorClass.m; sourceTree = "<group>"; };
+		22E68645160AE52600D706E8 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		22E68647160AE53A00D706E8 /* indian rupee black.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "indian rupee black.gif"; sourceTree = "<group>"; };
+		22E68649160AE54600D706E8 /* happysmiley.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = happysmiley.jpg; sourceTree = "<group>"; };
+		22E6864B160AE55100D706E8 /* sadsmiley.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sadsmiley.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +125,9 @@
 		2248FDE91601A061001E4718 = {
 			isa = PBXGroup;
 			children = (
+				222342751615779E00978AF5 /* smileyBackground.jpg */,
+				22345E7016147FD700CC12FD /* icon_114x114_trans.png */,
+				22345E6E16147FD000CC12FD /* 2730-57x57x32.png */,
 				2248FDFE1601A061001E4718 /* The Helper */,
 				2248FE271601A062001E4718 /* The HelperTests */,
 				2248FDF71601A061001E4718 /* Frameworks */,
@@ -146,10 +158,14 @@
 		2248FDFE1601A061001E4718 /* The Helper */ = {
 			isa = PBXGroup;
 			children = (
-				220DBED51609C095002128CF /* indian rupee black.gif */,
-				220DBECF1609BEF5002128CF /* background.jpg */,
-				220DBEC21609A573002128CF /* happysmiley.jpg */,
-				220DBEC31609A573002128CF /* sadsmiley.jpg */,
+				2248FE071601A061001E4718 /* TheHelperAppDelegate.h */,
+				2248FE081601A061001E4718 /* TheHelperAppDelegate.m */,
+				228F33D2161452C900CDA184 /* 119-piggy-bank.png */,
+				228F33D0161452AF00CDA184 /* 192-credit-card.png */,
+				22E6864B160AE55100D706E8 /* sadsmiley.jpg */,
+				22E68649160AE54600D706E8 /* happysmiley.jpg */,
+				22E68647160AE53A00D706E8 /* indian rupee black.gif */,
+				22E68645160AE52600D706E8 /* background.jpg */,
 				2290A4F616098C860063D30E /* constants.h */,
 				2290A4F716098C860063D30E /* constants.m */,
 				2290A4F816098C860063D30E /* TheCalculatorClass.h */,
@@ -158,11 +174,9 @@
 				2290A4F116098C0D0063D30E /* LoanViewController.m */,
 				2290A4F216098C0D0063D30E /* TipViewController.h */,
 				2290A4F316098C0D0063D30E /* TipViewController.m */,
-				2248FE3A1601A08E001E4718 /* 192-credit-card.png */,
-				2248FE381601A087001E4718 /* 119-piggy-bank.png */,
-				2248FE071601A061001E4718 /* TheHelperAppDelegate.h */,
-				2248FE081601A061001E4718 /* TheHelperAppDelegate.m */,
 				2248FE0A1601A061001E4718 /* MainStoryboard.storyboard */,
+				2223427816157B2800978AF5 /* StartFromHereViewController.h */,
+				2223427916157B2800978AF5 /* StartFromHereViewController.m */,
 				2248FE101601A061001E4718 /* first.png */,
 				2248FE121601A061001E4718 /* first@2x.png */,
 				2248FE3C1601B2CC001E4718 /* LoanResultViewController.h */,
@@ -283,12 +297,15 @@
 				2248FE131601A061001E4718 /* first@2x.png in Resources */,
 				2248FE181601A061001E4718 /* second.png in Resources */,
 				2248FE1A1601A061001E4718 /* second@2x.png in Resources */,
-				2248FE391601A087001E4718 /* 119-piggy-bank.png in Resources */,
-				2248FE3B1601A08E001E4718 /* 192-credit-card.png in Resources */,
-				220DBEC41609A573002128CF /* happysmiley.jpg in Resources */,
-				220DBEC51609A573002128CF /* sadsmiley.jpg in Resources */,
-				220DBED01609BEF5002128CF /* background.jpg in Resources */,
-				220DBED61609C095002128CF /* indian rupee black.gif in Resources */,
+				22E68646160AE52600D706E8 /* background.jpg in Resources */,
+				22E68648160AE53A00D706E8 /* indian rupee black.gif in Resources */,
+				22E6864A160AE54600D706E8 /* happysmiley.jpg in Resources */,
+				22E6864C160AE55100D706E8 /* sadsmiley.jpg in Resources */,
+				228F33D1161452AF00CDA184 /* 192-credit-card.png in Resources */,
+				228F33D3161452C900CDA184 /* 119-piggy-bank.png in Resources */,
+				22345E6F16147FD000CC12FD /* 2730-57x57x32.png in Resources */,
+				22345E7116147FD700CC12FD /* icon_114x114_trans.png in Resources */,
+				222342761615779E00978AF5 /* smileyBackground.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +348,7 @@
 				2290A4F516098C0D0063D30E /* TipViewController.m in Sources */,
 				2290A4FA16098C860063D30E /* constants.m in Sources */,
 				2290A4FB16098C860063D30E /* TheCalculatorClass.m in Sources */,
+				2223427A16157B2800978AF5 /* StartFromHereViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

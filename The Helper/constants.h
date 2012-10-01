@@ -14,7 +14,6 @@ extern const float enableValue;
 extern NSString * const TipResultPage;
 extern const int minValue;
 extern const int maxValue;
-extern NSString * const blank;
 extern const int monthlyRate; 
 extern const int centPercent;   
 

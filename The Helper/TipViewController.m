@@ -42,7 +42,7 @@
 }
 
 - (void) changeButtonStatus {
-    if (!([billAmount.text isEqualToString:blank] || [tipRate.text isEqualToString:blank])) {
+    if (!(billAmount.text == nil || tipRate.text == nil)) {
         tipCalculateButton.enabled = YES;
         tipCalculateButton.alpha = enableValue;
     } 
@@ -81,7 +81,8 @@
     tipRate.keyboardType = UIKeyboardTypeDecimalPad;
     tipCalculateButton.enabled = NO;
     tipCalculateButton.alpha = disableValue;
-    
+    self.tabBarController.navigationItem.hidesBackButton = YES;
+    //self.tabBarController.title = @"Tip Calculator";
 }
 
 - (void)viewDidUnload

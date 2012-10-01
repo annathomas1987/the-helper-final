@@ -18,6 +18,8 @@
     UITextField *loanTerm;
     UIButton *calculateButton;
     long int emi, totalInterest, totalPayment;
+    UIScrollView *scrollView;
+    UITextField *activeField;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *principalAmount;  
@@ -26,12 +28,18 @@
 @property (nonatomic, retain) IBOutlet UISlider *rateSlider;
 @property (nonatomic, retain) IBOutlet UITextField *loanTerm;
 @property (nonatomic, retain) IBOutlet UIButton *calculateButton;
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain)IBOutlet UITextField *activeField;
 
 - (IBAction) sliderValueChanged:(id)sender;
 - (IBAction) calculateLoan:(id)sender;  
 - (IBAction) backgroundTouchedHideKeyboard:(id)sender;
 - (void) checkAndChangeSlider;
 - (void) changeButtonStatus;
+- (IBAction) keyboardDidShow:(NSNotification *)aNotification;
+- (IBAction) keyboardDidHide:(NSNotification *)aNotification;
+- (IBAction) textFieldDidBeginEditing:(UITextField *)textField;
+- (IBAction) textFieldDidEndEditing:(UITextField *)textField;
 
 @end
 

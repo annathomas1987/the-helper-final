@@ -21,8 +21,9 @@
 @synthesize tipRate;
 @synthesize tipSlider;
 @synthesize tipCalculateButton;
-@synthesize warningForLoan;
+@synthesize warningForBill;
 @synthesize activeField;
+@synthesize scrollView;
 
 - (void)calculateTip:(id)sender   
 {  
@@ -35,16 +36,17 @@
 }  
 
 - (void) checkAndChangeSlider {
-    float sliderValue = [[tipRate text] floatValue];
-    if (sliderValue > maxValue) { sliderValue = maxValue; }
-    if (sliderValue < minValue) { sliderValue = minValue; }
-    [tipSlider setValue:sliderValue];
-    tipRate.text = [NSString stringWithFormat:@"%.1f", sliderValue];
-
+    if (![tipRate.text isEqualToString:@""]) {
+        float sliderValue = [[tipRate text] floatValue];
+        if (sliderValue > maxValue) { sliderValue = maxValue; }
+        if (sliderValue < minValue) { sliderValue = minValue; }
+        [tipSlider setValue:sliderValue];
+        tipRate.text = [NSString stringWithFormat:@"%.1f", sliderValue];
+    }
 }
 
 - (void) changeButtonStatus {
-    if (!(billAmount.text == nil || tipRate.text == nil)) {
+    if (!([billAmount.text isEqualToString:@""] || [tipRate.text isEqualToString:@""])) {
         tipCalculateButton.enabled = YES;
         tipCalculateButton.alpha = enableValue;
     } 
@@ -72,28 +74,18 @@
         TipResultViewController *tipObject = [segue destinationViewController];
         tipObject.tip = [NSNumber numberWithInteger:tipToGive];
         tipObject.totalAmount = [NSNumber numberWithInteger:totalAmount];
-        //tipObject
     }
-}
-
- 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    tipRate.keyboardType = UIKeyboardTypeDecimalPad;
-    tipCalculateButton.enabled = NO;
-    tipCalculateButton.alpha = disableValue;
-    self.tabBarController.navigationItem.hidesBackButton = YES;
-    //self.tabBarController.title = @"Tip Calculator";
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     activeField = textField;
+    NSLog(@"active field = %@", activeField.text);
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    
     int intValue;
     activeField = nil;
     if (textField.text.length>0 && [[NSScanner scannerWithString:textField.text] scanInt:&intValue]) {
@@ -102,23 +94,33 @@
         }
     }
     else {
-        if (textField == principalAmount) {
-            [warningForPrincipal setHidden:NO];
-        }
-        else {
-            [warningForLoan setHidden:NO];
-        }
+        [warningForBill setHidden:NO];
         textField.text = nil;
     }
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    tipRate.keyboardType = UIKeyboardTypeDecimalPad;
+    tipCalculateButton.enabled = NO;
+    tipCalculateButton.alpha = disableValue;
+    [warningForBill setHidden:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:)name:UIKeyboardDidShowNotification object:self.view.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:self.view.window];
+    //changed nil to self.view.window
+}
+
 - (void)viewDidUnload
 {
-    [self setWarningForLoan:nil];
+    [self setWarningForBill:nil];
     [super viewDidUnload];
     self.billAmount = nil;
     self.tipRate = nil;
     self.tipSlider = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

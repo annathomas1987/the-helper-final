@@ -41,6 +41,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
+                                    <action selector="textFieldDidBeginEditing:" destination="2" eventType="editingDidBegin" id="6av-62-l0H"/>
                                     <action selector="textFieldDidEndEditing:" destination="2" eventType="editingDidEnd" id="zTo-LH-Jsc"/>
                                 </connections>
                             </textField>
@@ -54,7 +55,7 @@
                                 <rect key="frame" x="41" y="237" width="238" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="textFieldDidBeginEditing:" destination="2" eventType="editingDidBegin" id="4r2-HA-er0"/>
                                     <action selector="textFieldDidEndEditing:" destination="2" eventType="editingDidEnd" id="Kb2-bb-KwG"/>
@@ -191,7 +192,7 @@
                                     <action selector="sliderValueChanged:" destination="3" eventType="valueChanged" id="dTD-Jg-9WK"/>
                                 </connections>
                             </slider>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="Pnm-zx-ZHa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="Pnm-zx-ZHa">
                                 <rect key="frame" x="178" y="170" width="70" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -202,6 +203,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="textFieldDidBeginEditing:" destination="3" eventType="editingDidBegin" id="Ldh-bj-3U0"/>
+                                    <action selector="textFieldDidEndEditing:" destination="3" eventType="editingDidEnd" id="Oye-oL-qTb"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dnm-5C-Ej5">
                                 <rect key="frame" x="106" y="310" width="108" height="37"/>
@@ -272,7 +277,7 @@
                         <outlet property="tipRate" destination="Pnm-zx-ZHa" id="Aqm-8h-BhH"/>
                         <outlet property="tipRateLabel" destination="0me-Ps-xNL" id="3iK-xp-5Vr"/>
                         <outlet property="tipSlider" destination="Ax5-VT-XHu" id="5dn-yc-dr7"/>
-                        <outlet property="warningForLoan" destination="SUM-bH-8yu" id="d3d-DH-DEG"/>
+                        <outlet property="warningForBill" destination="SUM-bH-8yu" id="M4S-Mu-UsV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
@@ -411,6 +416,63 @@
         <image name="indian rupee black.gif" width="30" height="45"/>
         <image name="sadsmiley.jpg" width="90" height="97"/>
     </resources>
+    <classes>
+        <class className="LoanResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoanResultViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="calculatedEmi" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="calculatedInterest" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="calculatedPayment" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LoanViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoanViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
+                <relationship kind="action" name="calculateLoan:"/>
+                <relationship kind="action" name="keyboardDidHide:" candidateClass="NSNotification"/>
+                <relationship kind="action" name="keyboardDidShow:" candidateClass="NSNotification"/>
+                <relationship kind="action" name="sliderValueChanged:"/>
+                <relationship kind="action" name="textFieldDidBeginEditing:" candidateClass="UITextField"/>
+                <relationship kind="action" name="textFieldDidEndEditing:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="activeField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="calculateButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loanTerm" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="principalAmount" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rateAmount" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rateSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="warningForLoan" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="warningForPrincipal" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TipResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TipResultViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="calculatedTip" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="calculatedTotalAmount" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TipViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TipViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
+                <relationship kind="action" name="calculateTip:"/>
+                <relationship kind="action" name="sliderValueChanged:"/>
+                <relationship kind="action" name="textFieldDidBeginEditing:" candidateClass="UITextField"/>
+                <relationship kind="action" name="textFieldDidEndEditing:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="activeField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="billAmount" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tipCalculateButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tipRate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tipRateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tipSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="warningForBill" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

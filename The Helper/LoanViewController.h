@@ -20,13 +20,12 @@
     UILabel *warningForLoan;
     UILabel *warningForPrincipal;
     long int emi, totalInterest, totalPayment;
+    BOOL keyboardShown, viewMoved;
     UIScrollView *scrollView;
     UITextField *activeField;
 }
 @property (nonatomic, retain) IBOutlet UILabel *warningForPrincipal;
 @property (nonatomic, retain) IBOutlet UILabel *warningForLoan;
-
-
 @property (nonatomic, retain) IBOutlet UITextField *principalAmount;  
 @property (nonatomic, retain) IBOutlet UILabel *rateLabel;  
 @property (nonatomic, retain) IBOutlet UITextField *rateAmount;

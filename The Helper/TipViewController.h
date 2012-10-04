@@ -20,20 +20,22 @@
     float tipToGive, totalAmount;
     UITextField *activeField;
     UILabel *warningForBill;
+    UIScrollView *scrollView;
 }
 @property (nonatomic, retain) IBOutlet UILabel *warningForBill;
-
 @property (nonatomic, retain) IBOutlet UITextField *billAmount;  
 @property (nonatomic, retain) IBOutlet UILabel *tipRateLabel;  
 @property (nonatomic, retain) IBOutlet UITextField *tipRate;
 @property (nonatomic, retain) IBOutlet UISlider *tipSlider;
 @property (nonatomic, retain) IBOutlet UIButton *tipCalculateButton;
 @property (nonatomic, retain) IBOutlet UITextField *activeField;
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 - (IBAction) sliderValueChanged:(id)sender; 
 - (IBAction) calculateTip:(id)sender;  
 - (IBAction) backgroundTouchedHideKeyboard:(id)sender;
 - (void) checkAndChangeSlider;
 - (void) changeButtonStatus;
-
+- (IBAction) textFieldDidBeginEditing:(UITextField *)textField;
+- (IBAction) textFieldDidEndEditing:(UITextField *)textField;
 @end

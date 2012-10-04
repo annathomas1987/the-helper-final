@@ -54,7 +54,6 @@
 
 - (void) changeButtonStatus {
     if (!([principalAmount.text isEqualToString:@""] || [rateAmount.text isEqualToString:@""] || [loanTerm.text isEqualToString:@""])) {
-        NSLog(@"h%@--%@--%@h", principalAmount.text,rateAmount.text, loanTerm.text);
         calculateButton.enabled = YES;
         calculateButton.alpha = enableValue;
     } 
@@ -62,12 +61,10 @@
         calculateButton.enabled = NO;
         calculateButton.alpha = disableValue;
     }
-    NSLog(@"the value : %d",!([principalAmount.text isEqualToString:@""]  || [rateAmount.text isEqualToString:@""] || [loanTerm.text isEqualToString:@""]));
 }
 
-
 - (void) backgroundTouchedHideKeyboard:(id)sender {
-    NSLog(@"touched");
+    NSLog(@"background is touched..");
     [self checkAndChangeSlider];
     [self changeButtonStatus];
     [principalAmount resignFirstResponder];  
@@ -88,15 +85,22 @@
     }
 } 
 
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     activeField = textField;
+    if (textField == loanTerm) {
+        viewMoved = YES;
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     int intValue;
     activeField = nil;
+    if (textField == loanTerm) {
+        viewMoved = YES;
+    }
     if (textField.text.length>0 && [[NSScanner scannerWithString:textField.text] scanInt:&intValue]) {
         if (textField == principalAmount) {
             [warningForPrincipal setHidden:YES];
@@ -118,44 +122,62 @@
 
 - (void)keyboardDidShow:(NSNotification *)aNotification
 {
-    //Assign new frame to your view
-    //[self.view setFrame:CGRectMake(0,-20,320,460)];
-    //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
-    NSDictionary* info = [aNotification userInfo];
-    CGSize keyBoardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyBoardSize.height, 0.0);
-    scrollView.contentInset = contentInsets;
-    scrollView.scrollIndicatorInsets = contentInsets;
-    
-    CGRect aRect = self.view.frame;
-    aRect.size.height -=keyBoardSize.height;
-    if (!CGRectContainsPoint(aRect, activeField.frame.origin)) {
-        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-keyBoardSize.height);
-        [scrollView setContentOffset:scrollPoint animated:YES];
+    NSLog(@"keyboard came");
+    if (keyboardShown) {
+        return;
     }
-    
+    if (activeField == loanTerm) {
+        NSDictionary* info = [aNotification userInfo];
+        CGSize keyBoardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+        CGRect aRect = self.view.frame;
+        aRect.origin.y -= keyBoardSize.height;
+        aRect.size.height -=keyBoardSize.height;
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3];
+        self.view.frame = aRect;
+        [UIView commitAnimations];
+        viewMoved = YES;
+    }
+    keyboardShown = YES;
 }
 
 -(void)keyboardDidHide:(NSNotification *)aNotification
 {
-    //[self.view setFrame:CGRectMake(0,0,320,460)];
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    scrollView.contentInset = contentInsets;
-    scrollView.scrollIndicatorInsets = contentInsets;
+    NSLog(@"keyboard went");
+    if (viewMoved) {
+        NSDictionary *info = [aNotification userInfo];
+        CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+
+        NSTimeInterval animationDuration = 0.300000011920929;
+        CGRect frame = self.view.frame;
+        frame.origin.y += keyboardSize.height;
+        frame.size.height -= keyboardSize.height;
+        [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        self.view.frame = frame;
+        [UIView commitAnimations];
+        
+        viewMoved = NO;
+
+    }
+    keyboardShown = NO;
 }
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    viewMoved = NO;
+    keyboardShown = NO;
     [warningForLoan setHidden:YES];
     [warningForPrincipal setHidden:YES];
     rateAmount.keyboardType = UIKeyboardTypeDecimalPad;
     calculateButton.enabled = NO;
     calculateButton.alpha = disableValue;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:)name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:)name:UIKeyboardDidShowNotification object:self.view.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:self.view.window];
 }
+
 - (void)viewDidUnload
 {
     warningForPrincipal = nil;
@@ -168,6 +190,8 @@
     self.rateAmount = nil;
     self.rateSlider = nil;
     self.loanTerm = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

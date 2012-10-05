@@ -749,11 +749,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/TipViewController.m"
-         timestampString = "371108098.878565"
+         timestampString = "371109785.011688"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "52"
-         endingLineNumber = "52"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "-giveWarningIfRequired"
          landmarkType = "5">
       </FileBreakpoint>

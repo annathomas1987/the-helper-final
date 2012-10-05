@@ -33,7 +33,7 @@
 		228F33D3161452C900CDA184 /* 119-piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 228F33D2161452C900CDA184 /* 119-piggy-bank.png */; };
 		2290A4F416098C0D0063D30E /* LoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F116098C0D0063D30E /* LoanViewController.m */; };
 		2290A4F516098C0D0063D30E /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F316098C0D0063D30E /* TipViewController.m */; };
-		2290A4FA16098C860063D30E /* ConstantsAndCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F716098C860063D30E /* ConstantsAndCommons.m */; };
+		2290A4FA16098C860063D30E /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F716098C860063D30E /* constants.m */; };
 		2290A4FB16098C860063D30E /* TheCalculatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F916098C860063D30E /* TheCalculatorClass.m */; };
 		2295DF651619648E0093809D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2295DF641619648E0093809D /* Default.png */; };
 		2295DF68161964EF0093809D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2295DF67161964EF0093809D /* Default@2x.png */; };
@@ -91,8 +91,8 @@
 		2290A4F116098C0D0063D30E /* LoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanViewController.m; sourceTree = "<group>"; };
 		2290A4F216098C0D0063D30E /* TipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
 		2290A4F316098C0D0063D30E /* TipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
-		2290A4F616098C860063D30E /* ConstantsAndCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsAndCommons.h; sourceTree = "<group>"; };
-		2290A4F716098C860063D30E /* ConstantsAndCommons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantsAndCommons.m; sourceTree = "<group>"; };
+		2290A4F616098C860063D30E /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		2290A4F716098C860063D30E /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		2290A4F816098C860063D30E /* TheCalculatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheCalculatorClass.h; sourceTree = "<group>"; };
 		2290A4F916098C860063D30E /* TheCalculatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheCalculatorClass.m; sourceTree = "<group>"; };
 		2295DF641619648E0093809D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 				22E68649160AE54600D706E8 /* happysmiley.jpg */,
 				22E68647160AE53A00D706E8 /* indian rupee black.gif */,
 				22E68645160AE52600D706E8 /* background.jpg */,
-				2290A4F616098C860063D30E /* ConstantsAndCommons.h */,
-				2290A4F716098C860063D30E /* ConstantsAndCommons.m */,
+				2290A4F616098C860063D30E /* constants.h */,
+				2290A4F716098C860063D30E /* constants.m */,
 				2290A4F816098C860063D30E /* TheCalculatorClass.h */,
 				2290A4F916098C860063D30E /* TheCalculatorClass.m */,
 				2290A4F016098C0D0063D30E /* LoanViewController.h */,
@@ -358,7 +358,7 @@
 				2264FBFB1601BACC00517600 /* TipResultViewController.m in Sources */,
 				2290A4F416098C0D0063D30E /* LoanViewController.m in Sources */,
 				2290A4F516098C0D0063D30E /* TipViewController.m in Sources */,
-				2290A4FA16098C860063D30E /* ConstantsAndCommons.m in Sources */,
+				2290A4FA16098C860063D30E /* constants.m in Sources */,
 				2290A4FB16098C860063D30E /* TheCalculatorClass.m in Sources */,
 				2223427A16157B2800978AF5 /* StartFromHereViewController.m in Sources */,
 			);

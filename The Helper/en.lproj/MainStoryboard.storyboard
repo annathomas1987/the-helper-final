@@ -55,7 +55,7 @@
                                 <rect key="frame" x="41" y="237" width="238" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                 <connections>
                                     <action selector="textFieldDidBeginEditing:" destination="2" eventType="editingDidBegin" id="4r2-HA-er0"/>
                                     <action selector="textFieldDidEndEditing:" destination="2" eventType="editingDidEnd" id="Kb2-bb-KwG"/>
@@ -202,7 +202,7 @@
                                 <rect key="frame" x="62" y="92" width="214" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="textFieldDidBeginEditing:" destination="3" eventType="editingDidBegin" id="Ldh-bj-3U0"/>
                                     <action selector="textFieldDidEndEditing:" destination="3" eventType="editingDidEnd" id="Oye-oL-qTb"/>

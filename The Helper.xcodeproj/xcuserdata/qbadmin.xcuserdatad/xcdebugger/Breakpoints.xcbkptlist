@@ -515,11 +515,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045558.467887"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "137"
-         endingLineNumber = "137"
+         startingLineNumber = "157"
+         endingLineNumber = "157"
          landmarkName = "-keyboardDidShow:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -528,11 +528,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045558.467887"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "137"
-         endingLineNumber = "137"
+         startingLineNumber = "157"
+         endingLineNumber = "157"
          landmarkName = "-keyboardDidShow:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -541,16 +541,16 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045558.467887"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "138"
-         endingLineNumber = "138"
+         startingLineNumber = "158"
+         endingLineNumber = "158"
          landmarkName = "-keyboardDidShow:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
@@ -563,7 +563,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
@@ -576,16 +576,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045773.021291"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
-         landmarkName = "-changeButtonStatus"
+         startingLineNumber = "112"
+         endingLineNumber = "112"
+         landmarkName = "-backgroundTouchedHideKeyboard:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -593,37 +593,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045775.885296"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
-         landmarkName = "-backgroundTouchedHideKeyboard:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045777.453255"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "67"
-         endingLineNumber = "67"
-         landmarkName = "-backgroundTouchedHideKeyboard:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045780.637324"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "76"
-         endingLineNumber = "76"
+         startingLineNumber = "122"
+         endingLineNumber = "122"
          landmarkName = "-sliderValueChanged:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -632,76 +606,76 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045782.213336"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
+         startingLineNumber = "125"
+         endingLineNumber = "125"
          landmarkName = "@implementation LoanViewController"
          landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045784.837352"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "80"
-         endingLineNumber = "80"
+         startingLineNumber = "126"
+         endingLineNumber = "126"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045788.509291"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "90"
-         endingLineNumber = "90"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
          landmarkName = "-textFieldDidBeginEditing:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045790.97335"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "98"
-         endingLineNumber = "98"
+         startingLineNumber = "139"
+         endingLineNumber = "139"
          landmarkName = "-textFieldDidEndEditing:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045794.805438"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
+         startingLineNumber = "144"
+         endingLineNumber = "144"
          landmarkName = "-keyboardDidShow:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045797.245419"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "145"
-         endingLineNumber = "145"
+         startingLineNumber = "165"
+         endingLineNumber = "165"
          landmarkName = "-keyboardDidHide:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -710,24 +684,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045803.493737"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "168"
-         endingLineNumber = "168"
+         startingLineNumber = "186"
+         endingLineNumber = "186"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045808.045781"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "182"
-         endingLineNumber = "182"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
          landmarkName = "-viewDidUnload"
          landmarkType = "5">
       </FileBreakpoint>
@@ -736,25 +710,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045811.117563"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "197"
-         endingLineNumber = "197"
+         startingLineNumber = "215"
+         endingLineNumber = "215"
          landmarkName = "-shouldAutorotateToInterfaceOrientation:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "The Helper/LoanViewController.m"
-         timestampString = "371045813.725574"
+         timestampString = "371109413.980653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "198"
-         endingLineNumber = "198"
+         startingLineNumber = "216"
+         endingLineNumber = "216"
          landmarkName = "-shouldAutorotateToInterfaceOrientation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "The Helper/LoanViewController.m"
+         timestampString = "371109133.548354"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
+         landmarkName = "-giveWarningIfRequired"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "The Helper/TipViewController.m"
+         timestampString = "371108098.878565"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
+         landmarkName = "-giveWarningIfRequired"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

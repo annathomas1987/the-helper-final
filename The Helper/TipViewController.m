@@ -8,7 +8,7 @@
 
 #import "TipViewController.h"
 #import "TheCalculatorClass.h"
-#import "constants.h"
+#import "ConstantsAndCommons.h"
 
 @interface TipViewController ()
 
@@ -45,6 +45,40 @@
     }
 }
 
+- (BOOL) isNumeric:(NSString *)text {
+    NSUInteger length = [text length];
+    NSUInteger i;
+    BOOL status = NO;
+    for (i=0; i < length; i++) {
+        unichar singlechar = [text characterAtIndex:i];
+        if ((singlechar == ' ') && (!status)) {
+            continue;
+        }
+        if ((singlechar == '+') && (!status)) {
+            status = YES;
+            continue;
+        }
+        if ((singlechar >= '0') && (singlechar <= '9')) {
+            status = YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    return (i == length) && status;
+}
+
+- (void) giveWarningIfRequired {
+    if (activeField == billAmount) {
+        if (activeField.text.length>0 && [self isNumeric:activeField.text]) {
+            [warningForBill setHidden:YES];
+        }
+        else {
+            [warningForBill setHidden:NO];
+            activeField.text = nil;
+        }
+    }
+}
 - (void) changeButtonStatus {
     if (!([billAmount.text isEqualToString:@""] || [tipRate.text isEqualToString:@""])) {
         tipCalculateButton.enabled = YES;
@@ -58,8 +92,10 @@
 }
 
 - (void)backgroundTouchedHideKeyboard:(id)sender  
-{  
+{
+    NSLog(@"backgroud touched");
     [self checkAndChangeSlider];
+    [self giveWarningIfRequired];
     [self changeButtonStatus];
     [billAmount resignFirstResponder];  
     [tipRate resignFirstResponder];
@@ -80,23 +116,11 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     activeField = textField;
-    NSLog(@"active field = %@", activeField.text);
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    
-    int intValue;
     activeField = nil;
-    if (textField.text.length>0 && [[NSScanner scannerWithString:textField.text] scanInt:&intValue]) {
-        if (textField == billAmount) {
-            [warningForBill setHidden:YES];
-        }
-    }
-    else {
-        [warningForBill setHidden:NO];
-        textField.text = nil;
-    }
 }
 
 - (void)viewDidLoad
@@ -106,9 +130,6 @@
     tipCalculateButton.enabled = NO;
     tipCalculateButton.alpha = disableValue;
     [warningForBill setHidden:YES];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:)name:UIKeyboardDidShowNotification object:self.view.window];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:self.view.window];
-    //changed nil to self.view.window
 }
 
 - (void)viewDidUnload
@@ -118,9 +139,6 @@
     self.billAmount = nil;
     self.tipRate = nil;
     self.tipSlider = nil;
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
-    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

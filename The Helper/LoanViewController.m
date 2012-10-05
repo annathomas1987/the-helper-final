@@ -8,7 +8,7 @@
 
 #import "LoanViewController.h"
 #import "TheCalculatorClass.h"
-#import "constants.h"
+#import "c"
 
 @interface LoanViewController ()
 
@@ -56,16 +56,62 @@
     if (!([principalAmount.text isEqualToString:@""] || [rateAmount.text isEqualToString:@""] || [loanTerm.text isEqualToString:@""])) {
         calculateButton.enabled = YES;
         calculateButton.alpha = enableValue;
-    } 
+    }
     else {
         calculateButton.enabled = NO;
         calculateButton.alpha = disableValue;
     }
 }
 
+- (BOOL) isNumeric:(NSString *)text {
+    NSUInteger length = [text length];
+    NSUInteger i;
+    BOOL status = NO;
+    for (i=0; i < length; i++) {
+        unichar singlechar = [text characterAtIndex:i];
+        if ((singlechar == ' ') && (!status)) {
+            continue;
+        }
+        if ((singlechar == '+') && (!status)) {
+            status = YES;
+            continue;
+        }
+        if ((singlechar >= '0') && (singlechar <= '9')) {
+            status = YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    return (i == length) && status;
+}
+
+- (void) giveWarningIfRequired {
+    if (activeField == principalAmount || activeField == loanTerm) {
+        if (activeField.text.length>0 && [self isNumeric:activeField.text]) {
+            if (activeField == principalAmount) {
+                [warningForPrincipal setHidden:YES];
+            }
+            else {
+                [warningForLoan setHidden:YES];
+            }
+        }
+        else {
+            if (activeField == principalAmount) {
+                [warningForPrincipal setHidden:NO];
+            }
+            else {
+                [warningForLoan setHidden:NO];
+            }
+            activeField.text = @"";
+        }
+    }
+
+}
+
 - (void) backgroundTouchedHideKeyboard:(id)sender {
-    NSLog(@"background is touched..");
     [self checkAndChangeSlider];
+    [self giveWarningIfRequired];
     [self changeButtonStatus];
     [principalAmount resignFirstResponder];  
     [rateAmount resignFirstResponder];
@@ -84,54 +130,28 @@
         loanObject.Payment = [NSNumber numberWithInteger:totalPayment];
     }
 } 
-
-
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     activeField = textField;
-    if (textField == loanTerm) {
-        viewMoved = YES;
-    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    int intValue;
     activeField = nil;
-    if (textField == loanTerm) {
-        viewMoved = YES;
-    }
-    if (textField.text.length>0 && [[NSScanner scannerWithString:textField.text] scanInt:&intValue]) {
-        if (textField == principalAmount) {
-            [warningForPrincipal setHidden:YES];
-        }
-        else {
-             [warningForLoan setHidden:YES];
-        }       
-    }
-    else {
-        if (textField == principalAmount) {
-            [warningForPrincipal setHidden:NO];
-        }
-        else {
-            [warningForLoan setHidden:NO];
-        }
-        textField.text = nil;
-    }
 }
 
 - (void)keyboardDidShow:(NSNotification *)aNotification
 {
-    NSLog(@"keyboard came");
     if (keyboardShown) {
         return;
     }
     if (activeField == loanTerm) {
         NSDictionary* info = [aNotification userInfo];
-        CGSize keyBoardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+        NSValue *aValue = [info objectForKey:UIKeyboardBoundsUserInfoKey];
+        CGSize keyBoardSize = [aValue CGRectValue].size;
         CGRect aRect = self.view.frame;
-        aRect.origin.y -= keyBoardSize.height;
-        aRect.size.height -=keyBoardSize.height;
+        aRect.origin.y -= keyBoardSize.height-44;
+        aRect.size.height +=keyBoardSize.height-44;
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.3];
         self.view.frame = aRect;
@@ -143,17 +163,15 @@
 
 -(void)keyboardDidHide:(NSNotification *)aNotification
 {
-    NSLog(@"keyboard went");
     if (viewMoved) {
         NSDictionary *info = [aNotification userInfo];
-        CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-
-        NSTimeInterval animationDuration = 0.300000011920929;
+        NSValue *aValue = [info objectForKey:UIKeyboardBoundsUserInfoKey];
+        CGSize keyboardSize = [aValue CGRectValue].size;
         CGRect frame = self.view.frame;
-        frame.origin.y += keyboardSize.height;
-        frame.size.height -= keyboardSize.height;
-        [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-        [UIView setAnimationDuration:animationDuration];
+        frame.origin.y += keyboardSize.height-44;
+        frame.size.height -= keyboardSize.height-44;
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.3];
         self.view.frame = frame;
         [UIView commitAnimations];
         

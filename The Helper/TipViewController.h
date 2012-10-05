@@ -36,6 +36,8 @@
 - (IBAction) backgroundTouchedHideKeyboard:(id)sender;
 - (void) checkAndChangeSlider;
 - (void) changeButtonStatus;
+- (void) giveWarningIfRequired;
 - (IBAction) textFieldDidBeginEditing:(UITextField *)textField;
 - (IBAction) textFieldDidEndEditing:(UITextField *)textField;
+- (BOOL) isNumeric:(NSString *) text;
 @end

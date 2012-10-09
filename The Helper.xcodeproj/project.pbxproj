@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2207F50216243A2D00CFBBD2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2207F50016243A2D00CFBBD2 /* MainStoryboard.storyboard */; };
 		222342761615779E00978AF5 /* smileyBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 222342751615779E00978AF5 /* smileyBackground.jpg */; };
 		2223427A16157B2800978AF5 /* StartFromHereViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223427916157B2800978AF5 /* StartFromHereViewController.m */; };
 		22345E6F16147FD000CC12FD /* 2730-57x57x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 22345E6E16147FD000CC12FD /* 2730-57x57x32.png */; };
@@ -17,7 +18,6 @@
 		2248FE031601A061001E4718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE011601A061001E4718 /* InfoPlist.strings */; };
 		2248FE051601A061001E4718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE041601A061001E4718 /* main.m */; };
 		2248FE091601A061001E4718 /* TheHelperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE081601A061001E4718 /* TheHelperAppDelegate.m */; };
-		2248FE0C1601A061001E4718 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE0A1601A061001E4718 /* MainStoryboard.storyboard */; };
 		2248FE111601A061001E4718 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE101601A061001E4718 /* first.png */; };
 		2248FE131601A061001E4718 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE121601A061001E4718 /* first@2x.png */; };
 		2248FE181601A061001E4718 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248FE171601A061001E4718 /* second.png */; };
@@ -55,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2207F50116243A2D00CFBBD2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "The Helper/en.lproj/MainStoryboard.storyboard"; sourceTree = "<group>"; };
 		222342751615779E00978AF5 /* smileyBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smileyBackground.jpg; sourceTree = "<group>"; };
 		2223427816157B2800978AF5 /* StartFromHereViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartFromHereViewController.h; sourceTree = "<group>"; };
 		2223427916157B2800978AF5 /* StartFromHereViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartFromHereViewController.m; sourceTree = "<group>"; };
@@ -70,7 +71,6 @@
 		2248FE061601A061001E4718 /* The Helper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Helper-Prefix.pch"; sourceTree = "<group>"; };
 		2248FE071601A061001E4718 /* TheHelperAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheHelperAppDelegate.h; sourceTree = "<group>"; };
 		2248FE081601A061001E4718 /* TheHelperAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheHelperAppDelegate.m; sourceTree = "<group>"; };
-		2248FE0B1601A061001E4718 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2248FE101601A061001E4718 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		2248FE121601A061001E4718 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		2248FE171601A061001E4718 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
@@ -131,6 +131,7 @@
 		2248FDE91601A061001E4718 = {
 			isa = PBXGroup;
 			children = (
+				2207F50016243A2D00CFBBD2 /* MainStoryboard.storyboard */,
 				2295DF69161965220093809D /* Default-568h@2x.png */,
 				2295DF67161964EF0093809D /* Default@2x.png */,
 				2295DF641619648E0093809D /* Default.png */,
@@ -183,7 +184,6 @@
 				2290A4F116098C0D0063D30E /* LoanViewController.m */,
 				2290A4F216098C0D0063D30E /* TipViewController.h */,
 				2290A4F316098C0D0063D30E /* TipViewController.m */,
-				2248FE0A1601A061001E4718 /* MainStoryboard.storyboard */,
 				2223427816157B2800978AF5 /* StartFromHereViewController.h */,
 				2223427916157B2800978AF5 /* StartFromHereViewController.m */,
 				2248FE101601A061001E4718 /* first.png */,
@@ -301,7 +301,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2248FE031601A061001E4718 /* InfoPlist.strings in Resources */,
-				2248FE0C1601A061001E4718 /* MainStoryboard.storyboard in Resources */,
 				2248FE111601A061001E4718 /* first.png in Resources */,
 				2248FE131601A061001E4718 /* first@2x.png in Resources */,
 				2248FE181601A061001E4718 /* second.png in Resources */,
@@ -318,6 +317,7 @@
 				2295DF651619648E0093809D /* Default.png in Resources */,
 				2295DF68161964EF0093809D /* Default@2x.png in Resources */,
 				2295DF6A161965220093809D /* Default-568h@2x.png in Resources */,
+				2207F50216243A2D00CFBBD2 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,20 +383,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2207F50016243A2D00CFBBD2 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2207F50116243A2D00CFBBD2 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		2248FE011601A061001E4718 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2248FE021601A061001E4718 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2248FE0A1601A061001E4718 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2248FE0B1601A061001E4718 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		2248FE2A1601A062001E4718 /* InfoPlist.strings */ = {
@@ -465,6 +465,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "The Helper/The Helper-Prefix.pch";
 				INFOPLIST_FILE = "The Helper/The Helper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -480,6 +481,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "The Helper/The Helper-Prefix.pch";
 				INFOPLIST_FILE = "The Helper/The Helper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

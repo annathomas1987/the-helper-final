@@ -585,7 +585,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "112"
          endingLineNumber = "112"
-         landmarkName = "-backgroundTouchedHideKeyboard:"
+         landmarkName = "-giveWarningIfRequired"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -598,7 +598,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "122"
          endingLineNumber = "122"
-         landmarkName = "-sliderValueChanged:"
+         landmarkName = "-backgroundTouchedHideKeyboard:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -611,8 +611,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "125"
          endingLineNumber = "125"
-         landmarkName = "@implementation LoanViewController"
-         landmarkType = "3">
+         landmarkName = "-sliderValueChanged:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -624,7 +624,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "126"
          endingLineNumber = "126"
-         landmarkName = "-prepareForSegue:sender:"
+         landmarkName = "-sliderValueChanged:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -637,7 +637,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "134"
          endingLineNumber = "134"
-         landmarkName = "-textFieldDidBeginEditing:"
+         landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -650,7 +650,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "139"
          endingLineNumber = "139"
-         landmarkName = "-textFieldDidEndEditing:"
+         landmarkName = "-textFieldDidBeginEditing:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -663,7 +663,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "144"
          endingLineNumber = "144"
-         landmarkName = "-keyboardDidShow:"
+         landmarkName = "-textFieldDidEndEditing:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -676,7 +676,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "165"
          endingLineNumber = "165"
-         landmarkName = "-keyboardDidHide:"
+         landmarkName = "-keyboardDidShow:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -689,7 +689,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "186"
          endingLineNumber = "186"
-         landmarkName = "-viewDidLoad"
+         landmarkName = "-keyboardDidHide:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -702,7 +702,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "200"
          endingLineNumber = "200"
-         landmarkName = "-viewDidUnload"
+         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -715,7 +715,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "215"
          endingLineNumber = "215"
-         landmarkName = "-shouldAutorotateToInterfaceOrientation:"
+         landmarkName = "-viewDidUnload"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -728,7 +728,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "216"
          endingLineNumber = "216"
-         landmarkName = "-shouldAutorotateToInterfaceOrientation:"
+         landmarkName = "-viewDidUnload"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -741,7 +741,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "89"
          endingLineNumber = "89"
-         landmarkName = "-giveWarningIfRequired"
+         landmarkName = "-isNumeric:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

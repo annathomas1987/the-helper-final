@@ -16,6 +16,8 @@
 			<array>
 				<string>2730-57x57x32.png</string>
 				<string>icon_114x114_trans.png</string>
+				<string>calculator.png</string>
+				<string>icon 144x144.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -45,6 +47,16 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarTintParameters</key>
+	<dict>
+		<key>UINavigationBar</key>
+		<dict>
+			<key>Style</key>
+			<string>UIBarStyleBlack</string>
+			<key>Translucent</key>
+			<true/>
+		</dict>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

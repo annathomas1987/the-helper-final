@@ -29,6 +29,9 @@
 		2248FE2F1601A062001E4718 /* The_HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE2E1601A062001E4718 /* The_HelperTests.m */; };
 		2248FE3E1601B2CC001E4718 /* LoanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */; };
 		2264FBFB1601BACC00517600 /* TipResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2264FBFA1601BACC00517600 /* TipResultViewController.m */; };
+		228A51F516252C1600DE89AF /* calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 228A51F416252C1600DE89AF /* calculator.png */; };
+		228A51F716252D5A00DE89AF /* icon 144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 228A51F616252D5A00DE89AF /* icon 144x144.png */; };
+		228A51F916252DB300DE89AF /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 228A51F816252DB300DE89AF /* Default-Portrait~ipad.png */; };
 		228F33D1161452AF00CDA184 /* 192-credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 228F33D0161452AF00CDA184 /* 192-credit-card.png */; };
 		228F33D3161452C900CDA184 /* 119-piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 228F33D2161452C900CDA184 /* 119-piggy-bank.png */; };
 		2290A4F416098C0D0063D30E /* LoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290A4F116098C0D0063D30E /* LoanViewController.m */; };
@@ -85,6 +88,9 @@
 		2248FE3D1601B2CC001E4718 /* LoanResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanResultViewController.m; sourceTree = "<group>"; };
 		2264FBF91601BACC00517600 /* TipResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipResultViewController.h; sourceTree = "<group>"; };
 		2264FBFA1601BACC00517600 /* TipResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipResultViewController.m; sourceTree = "<group>"; };
+		228A51F416252C1600DE89AF /* calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calculator.png; sourceTree = "<group>"; };
+		228A51F616252D5A00DE89AF /* icon 144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 144x144.png"; sourceTree = "<group>"; };
+		228A51F816252DB300DE89AF /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		228F33D0161452AF00CDA184 /* 192-credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "192-credit-card.png"; sourceTree = "<group>"; };
 		228F33D2161452C900CDA184 /* 119-piggy-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "119-piggy-bank.png"; sourceTree = "<group>"; };
 		2290A4F016098C0D0063D30E /* LoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanViewController.h; sourceTree = "<group>"; };
@@ -131,6 +137,9 @@
 		2248FDE91601A061001E4718 = {
 			isa = PBXGroup;
 			children = (
+				228A51F816252DB300DE89AF /* Default-Portrait~ipad.png */,
+				228A51F616252D5A00DE89AF /* icon 144x144.png */,
+				228A51F416252C1600DE89AF /* calculator.png */,
 				2207F50016243A2D00CFBBD2 /* MainStoryboard.storyboard */,
 				2295DF69161965220093809D /* Default-568h@2x.png */,
 				2295DF67161964EF0093809D /* Default@2x.png */,
@@ -318,6 +327,9 @@
 				2295DF68161964EF0093809D /* Default@2x.png in Resources */,
 				2295DF6A161965220093809D /* Default-568h@2x.png in Resources */,
 				2207F50216243A2D00CFBBD2 /* MainStoryboard.storyboard in Resources */,
+				228A51F516252C1600DE89AF /* calculator.png in Resources */,
+				228A51F716252D5A00DE89AF /* icon 144x144.png in Resources */,
+				228A51F916252DB300DE89AF /* Default-Portrait~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,8 +477,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "The Helper/The Helper-Prefix.pch";
 				INFOPLIST_FILE = "The Helper/The Helper-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -481,8 +494,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "The Helper/The Helper-Prefix.pch";
 				INFOPLIST_FILE = "The Helper/The Helper-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -63,12 +63,14 @@
     }
 }
 
+//This function checks whether the text passes is completely numeric or not - Code taken from internet.
 - (BOOL) isNumeric:(NSString *)text {
     NSUInteger length = [text length];
     NSUInteger i;
     BOOL status = NO;
     for (i=0; i < length; i++) {
         unichar singlechar = [text characterAtIndex:i];
+        //this first condition is to check if there are any blank spaces before the numbers
         if ((singlechar == ' ') && (!status)) {
             continue;
         }
@@ -86,6 +88,7 @@
     return (i == length) && status;
 }
 
+// this function gives warning message to user, if the value entered is either null or wrong.
 - (void) giveWarningIfRequired {
     if (activeField == principalAmount || activeField == loanTerm) {
         if (activeField.text.length>0 && [self isNumeric:activeField.text]) {
@@ -129,7 +132,8 @@
         loanObject.Interest = [NSNumber numberWithInteger:totalInterest];
         loanObject.Payment = [NSNumber numberWithInteger:totalPayment];
     }
-} 
+}
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     activeField = textField;
@@ -140,6 +144,7 @@
     activeField = nil;
 }
 
+//this function is does changes to the view only for the loan term text field as of now, as that is the only function that is getting hidden when the keyboard appears. Could be changed later on if required.
 - (void)keyboardDidShow:(NSNotification *)aNotification
 {
     if (keyboardShown) {

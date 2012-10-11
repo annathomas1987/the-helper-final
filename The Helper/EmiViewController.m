@@ -1,20 +1,20 @@
 //
-//  LoanViewController.m
+//  EmiViewController.m
 //  The Helper
 //
 //  Created by Anna Thomas on 9/13/12.
 //  Copyright (c) 2012 Client XYZ. All rights reserved.
 //
 
-#import "LoanViewController.h"
-#import "TheCalculatorClass.h"
-#import "constants.h"
+#import "EmiViewController.h"
 
-@interface LoanViewController ()
+NSString * const EmiResultPage = @"SendLoanInfo";
+
+@interface EmiViewController ()
 
 @end
 
-@implementation LoanViewController
+@implementation EmiViewController
 
 @synthesize principalAmount;
 @synthesize rateLabel;
@@ -27,10 +27,11 @@
 @synthesize warningForLoan;
 @synthesize warningForPrincipal;
 
-- (void)calculateLoan:(id)sender   
+//This function collects and returns to the view controller the calculated values.
+- (void)getCalculatedLoan:(id)sender
 {
     
-    TheCalculatorClass *calculatorObject = [[TheCalculatorClass alloc]init];
+    EmiCalculatorClass *calculatorObject = [[EmiCalculatorClass alloc]init];
     long int principal = [[principalAmount text] longLongValue];  
     float rate = [[rateAmount text] floatValue];
     int time = [[loanTerm text] intValue];
@@ -42,6 +43,8 @@
     totalPayment = [calculatorObject calculateTotalPayment:principal];
 }  
 
+// This function is for changing the slider when user enters a value into the related text field. - This function also includes the validation for the text filed entry.
+
 - (void) checkAndChangeSlider {
     if (![rateAmount.text isEqualToString:@""]) {
         float sliderValue = [[rateAmount text] floatValue];
@@ -52,6 +55,13 @@
     }
 }
 
+//This function is for changing the text Field value when the user has changed the value in the slider.
+
+- (IBAction) sliderValueChanged:(UISlider *)sender {
+    rateAmount.text = [NSString stringWithFormat:@"%.1f", [sender value]];
+}
+
+// This function ensures that the user is able to click the button only after all the required entries are made. 
 - (void) changeButtonStatus {
     if (!([principalAmount.text isEqualToString:@""] || [rateAmount.text isEqualToString:@""] || [loanTerm.text isEqualToString:@""])) {
         calculateButton.enabled = YES;
@@ -63,7 +73,7 @@
     }
 }
 
-//This function checks whether the text passes is completely numeric or not - Code taken from internet.
+//This function checks whether the text passed is completely numeric or not - Code taken from internet.
 - (BOOL) isNumeric:(NSString *)text {
     NSUInteger length = [text length];
     NSUInteger i;
@@ -121,16 +131,12 @@
     [loanTerm resignFirstResponder];
 }  
 
-- (IBAction) sliderValueChanged:(UISlider *)sender {
-    rateAmount.text = [NSString stringWithFormat:@"%.1f", [sender value]];  
-}  
-
  -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:LoanResultPage]) {
-        LoanResultViewController *loanObject = [segue destinationViewController];
-        loanObject.Emi = [NSNumber numberWithInteger:emi];
-        loanObject.Interest = [NSNumber numberWithInteger:totalInterest];
-        loanObject.Payment = [NSNumber numberWithInteger:totalPayment];
+    if ([[segue identifier] isEqualToString:EmiResultPage]) {
+        EmiResultViewController *emiObject = [segue destinationViewController];
+        emiObject.Emi = [NSNumber numberWithInteger:emi];
+        emiObject.Interest = [NSNumber numberWithInteger:totalInterest];
+        emiObject.Payment = [NSNumber numberWithInteger:totalPayment];
     }
 }
 
@@ -144,7 +150,7 @@
     activeField = nil;
 }
 
-//this function is does changes to the view only for the loan term text field as of now, as that is the only function that is getting hidden when the keyboard appears. Could be changed later on if required.
+//this function does changes to the view only for the loan term text field as of now, as that is the only function that is getting hidden when the keyboard appears. Could be changed later on if required.
 - (void)keyboardDidShow:(NSNotification *)aNotification
 {
     if (keyboardShown) {

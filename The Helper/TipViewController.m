@@ -7,8 +7,7 @@
 //
 
 #import "TipViewController.h"
-#import "TheCalculatorClass.h"
-#import "constants.h"
+NSString * const TipResultPage = @"SendTipInfo";
 
 @interface TipViewController ()
 
@@ -25,15 +24,17 @@
 @synthesize activeField;
 @synthesize scrollView;
 
-- (void)calculateTip:(id)sender   
+
+- (void)getCalculatedTip:(id)sender
 {  
-    TheCalculatorClass *calculateObject=[[TheCalculatorClass alloc]init];
+    TipCalculatorClass *calculateObject=[[TipCalculatorClass alloc]init];
     long int amount = [[billAmount text] longLongValue];
     float rate = [[tipRate text] floatValue];
     //call the function to calculate the tip
     tipToGive = [calculateObject calculate:amount Tip:rate];
     totalAmount = [calculateObject calculateTotalBill:amount];
 }  
+// This function is for changing the slider when user enters a value into the related text field. - This function also includes the validation for the text filed entry.
 
 - (void) checkAndChangeSlider {
     if (![tipRate.text isEqualToString:@""]) {
@@ -43,6 +44,12 @@
         [tipSlider setValue:sliderValue];
         tipRate.text = [NSString stringWithFormat:@"%.1f", sliderValue];
     }
+}
+
+//This function is for changing the text Field value when the user has changed the value in the slider.
+
+- (IBAction) sliderValueChanged:(UISlider *)sender {
+    tipRate.text = [NSString stringWithFormat:@"%.1f", [sender value]];
 }
 
 - (BOOL) isNumeric:(NSString *)text {
@@ -101,9 +108,6 @@
     [tipRate resignFirstResponder];
 }  
 
-- (IBAction) sliderValueChanged:(UISlider *)sender {  
-    tipRate.text = [NSString stringWithFormat:@"%.1f", [sender value]];  
-}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:TipResultPage]) {

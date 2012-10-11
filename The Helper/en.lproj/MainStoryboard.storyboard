@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
-        <!--Loan View Controller - First-->
+        <!--Emi View Controller - First-->
         <scene sceneID="11">
             <objects>
-                <viewController title="First" id="2" customClass="LoanViewController" sceneMemberID="viewController">
+                <viewController title="First" id="2" customClass="EmiViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateLoan:" destination="2" eventType="touchUpInside" id="GVA-nf-WFB"/>
+                                    <action selector="getCalculatedLoan:" destination="2" eventType="touchUpInside" id="eZ6-yJ-9Y1"/>
                                     <segue destination="1F7-t4-sgb" kind="push" identifier="SendLoanInfo" id="fSa-sF-2J2"/>
                                 </connections>
                             </button>
@@ -220,7 +220,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateTip:" destination="3" eventType="touchUpInside" id="l8v-ta-s95"/>
+                                    <action selector="getCalculatedTip:" destination="3" eventType="touchUpInside" id="J6S-pu-2VM"/>
                                     <segue destination="KsG-3b-usk" kind="push" identifier="SendTipInfo" id="MOT-Mh-fKC"/>
                                 </connections>
                             </button>
@@ -284,10 +284,10 @@
             </objects>
             <point key="canvasLocation" x="723" y="490"/>
         </scene>
-        <!--Loan Result View Controller - Loan Calculator-->
+        <!--Emi Result View Controller - Loan Calculator-->
         <scene sceneID="ZaL-xN-8hd">
             <objects>
-                <viewController id="1F7-t4-sgb" customClass="LoanResultViewController" sceneMemberID="viewController">
+                <viewController id="1F7-t4-sgb" customClass="EmiResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H94-ut-2YT">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -417,19 +417,19 @@
         <image name="sadsmiley.jpg" width="90" height="97"/>
     </resources>
     <classes>
-        <class className="LoanResultViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoanResultViewController.h"/>
+        <class className="EmiResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EmiResultViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="calculatedEmi" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="calculatedInterest" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="calculatedPayment" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="LoanViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoanViewController.h"/>
+        <class className="EmiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EmiViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
-                <relationship kind="action" name="calculateLoan:"/>
+                <relationship kind="action" name="getCalculatedLoan:"/>
                 <relationship kind="action" name="keyboardDidHide:" candidateClass="NSNotification"/>
                 <relationship kind="action" name="keyboardDidShow:" candidateClass="NSNotification"/>
                 <relationship kind="action" name="sliderValueChanged:"/>
@@ -458,7 +458,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TipViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
-                <relationship kind="action" name="calculateTip:"/>
+                <relationship kind="action" name="getCalculatedTip:"/>
                 <relationship kind="action" name="sliderValueChanged:"/>
                 <relationship kind="action" name="textFieldDidBeginEditing:" candidateClass="UITextField"/>
                 <relationship kind="action" name="textFieldDidEndEditing:" candidateClass="UITextField"/>

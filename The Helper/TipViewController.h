@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TipResultViewController.h"
+#import "TipCalculatorClass.h"
+#import "constants.h"
 
+
+extern NSString * const TipResultPage;
 
 @interface TipViewController : UIViewController{
     
@@ -32,7 +36,7 @@
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 - (IBAction) sliderValueChanged:(id)sender; 
-- (IBAction) calculateTip:(id)sender;  
+- (IBAction) getCalculatedTip:(id)sender;
 - (IBAction) backgroundTouchedHideKeyboard:(id)sender;
 - (void) checkAndChangeSlider;
 - (void) changeButtonStatus;

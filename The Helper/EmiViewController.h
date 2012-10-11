@@ -1,5 +1,5 @@
 //
-//  LoanViewController.h
+//  EmiViewController.h
 //  The Helper
 //
 //  Created by Anna Thomas on 9/13/12.
@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoanResultViewController.h"
+#import "EmiResultViewController.h"
+#import "EmiCalculatorClass.h"
+#import "constants.h"
 
-@interface LoanViewController : UIViewController {
+extern NSString * const EmiResultPage;
+
+@interface EmiViewController : UIViewController {
 
     UITextField *principalAmount;  
     UILabel     *rateLabel;
@@ -37,7 +41,7 @@
 
 
 - (IBAction) sliderValueChanged:(id)sender;
-- (IBAction) calculateLoan:(id)sender;  
+- (IBAction) getCalculatedLoan:(id)sender;
 - (IBAction) backgroundTouchedHideKeyboard:(id)sender;
 - (void) checkAndChangeSlider;
 - (void) changeButtonStatus;

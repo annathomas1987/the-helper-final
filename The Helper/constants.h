@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const LoanResultPage;
+
 extern const float disableValue;
 extern const float enableValue;
-extern NSString * const TipResultPage;
 extern const int minValue;
 extern const int maxValue;
 extern const int monthlyRate; 

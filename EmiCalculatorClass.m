@@ -29,25 +29,20 @@
     temp = powf(temp, time);      //(1+r)^n
     Emi = Emi * temp / (temp-1);  //the complete formula
     
-    /************************************************
+    /* 
+     ************************************************
      This is the part of code that passes the values to remote php page
      ************************************************/
-    
-    // Create the request.
-    NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8888/PhpProject2/index.php/"]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-    
-    // create the connection with the request
-    // and start loading the data
-    
-    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/PhpProject2/emiServerSideCalculation.php?principal=%ld&rate=%f&time=%d", principal, rate, time]]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Current-Type"];
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (theConnection) {
-        // Create the NSMutableData to hold the received data.
-        // receivedData is an instance variable declared elsewhere.
         receivedData = [NSMutableData data];
-        NSLog(@"Connection successful : received Data = %@", receivedData);
-    } else {
-        // Inform the user that the connection failed.
-        NSLog(@"Connection failed");        
+        NSString *receivedDataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+        NSLog(@"received Data = %@", receivedData);
+        NSLog(@"received Data String = %@", receivedDataString);
     }
     return Emi;
 }
@@ -66,7 +61,6 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    NSLog(@"Connection didReceiveResponse");
     // This method is called when the server has determined that it
     // has enough information to create the NSURLResponse.
     
@@ -75,6 +69,7 @@
     
     // receivedData is an instance variable declared elsewhere.
     [receivedData setLength:0];
+    NSLog(@"Connection didReceiveResponse - %@", receivedData);
 }
 
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
@@ -83,7 +78,9 @@
     
     //receiveData is an instance variable declared elsewhere.
     [receivedData appendData:data];
-    NSLog(@"Connection didReceiveData - %@", receivedData);
+    NSString *receivedDataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    NSLog(@"Connection didReceiveDataString - %@", receivedDataString);
+   // NSLog(@"Connection didReceiveData - %@", receivedData);
 }
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

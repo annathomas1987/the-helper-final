@@ -12,6 +12,7 @@
 @interface TipCalculatorClass : NSObject {
     
     float Tip, totalAmount;
+    NSMutableData *receivedData;
 }
 
 - (float) calculate:(long int)billAmount Tip: (float)tipRate;

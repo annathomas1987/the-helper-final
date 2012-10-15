@@ -25,6 +25,6 @@
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
 - (void) connectionDidFinishLaunching:(NSURLConnection *) connection;
-
+- (void) startParsing:(NSString *)myXMLString;
 
 @end

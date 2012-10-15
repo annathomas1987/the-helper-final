@@ -45,36 +45,25 @@
 {
     // This method is called when the server has determined that it
     // has enough information to create the NSURLResponse.
-    
-    // It can be called multiple times, for example in the case of a
-    // redirect, so each time we reset the data.
-    
-    // receivedData is an instance variable declared elsewhere.
     [receivedData setLength:0];
     NSLog(@"Connection didReceiveResponse - %@", receivedData);
 }
 
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    
-    //Append the new data to receiveData.
-    
-    //receiveData is an instance variable declared elsewhere.
     [receivedData appendData:data];
     NSString *receivedDataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     NSLog(@"Connection didReceiveDataString - %@", receivedDataString);
-    // NSLog(@"Connection didReceiveData - %@", receivedData);
+    NSData *jsonData = [receivedDataString dataUsingEncoding:NSUnicodeStringEncoding];
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    NSDictionary *tipCalculator = [json objectForKey:@"TipCalculator"];
+    Tip = [[tipCalculator objectForKey:@"tip"] floatValue];
+    NSLog(@"integer value : %f", Tip);
+    totalAmount = [[tipCalculator objectForKey:@"tip"] floatValue];
 }
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    
-    
-    //release the connection, and the data object
-    //[connection release];
-    //receiveData is declared as an instance variable elsewhere
-    //[receiveData release];
-    //inform the user
     NSLog(@"Connection failed! Error - %@ %@", [error localizedDescription], [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
 }
-
 
 @end

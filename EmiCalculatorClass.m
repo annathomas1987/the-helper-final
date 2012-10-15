@@ -63,45 +63,77 @@
 {
     // This method is called when the server has determined that it
     // has enough information to create the NSURLResponse.
-    
-    // It can be called multiple times, for example in the case of a
-    // redirect, so each time we reset the data.
-    
-    // receivedData is an instance variable declared elsewhere.
     [receivedData setLength:0];
     NSLog(@"Connection didReceiveResponse - %@", receivedData);
 }
 
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    
-    //Append the new data to receiveData.
-    
-    //receiveData is an instance variable declared elsewhere.
     [receivedData appendData:data];
     NSString *receivedDataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     NSLog(@"Connection didReceiveDataString - %@", receivedDataString);
-   // NSLog(@"Connection didReceiveData - %@", receivedData);
+    NSData *xmlData = [receivedDataString dataUsingEncoding:NSUnicodeStringEncoding];
+    if ([xmlData length] == 0) {
+        NSLog(@"empty stirng.. :(");
+    }
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlData];
+    [parser setDelegate:self];
+    [parser parse];
+    
+}
+
+- (void) parser: (NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    NSLog(@"error occured : %@", parseError);
 }
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    
-    
-    //release the connection, and the data object
-    //[connection release];
-    //receiveData is declared as an instance variable elsewhere
-    //[receiveData release];
-    //inform the user
     NSLog(@"Connection failed! Error - %@ %@", [error localizedDescription], [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
 }
 
 - (void) connectionDidFinishLaunching:(NSURLConnection *)connection {
-    
-    //do something with the data
-    //receiveData is declared as a method instance elsewhere
     NSLog(@"Succeeded! Received __ bytes of data");
-    //release the connection and the data object
-    //[connection release];
-    //[receiveData release];
 }
 
+- (void) parser:(NSXMLParser *) parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    NSLog(@"inside parserdidStarteELement");
+    if ([elementName isEqualToString:@"LoanCalculator"]) {
+        //do nothing
+        NSLog(@"got the tag LoanCalculator");
+    }
+    if ([elementName isEqualToString:@"emi"]) {
+        //assign tip to tip
+        NSLog(@"got the tag emi");
+    }
+    if ([elementName isEqualToString:@"totalPayment"]) {
+        //assign totalAmount to totalAmount
+        NSLog(@"got the tag totalPayment");
+    }
+}
+
+- (void) parser: (NSXMLParser *) parser foundCharacters:(NSString *)string {
+    
+    // do some action
+    NSLog(@"inside parser foundcharacters");
+}
+
+- (void) parser: (NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    //ignore root and empty elements
+    NSLog(@"inside parser didEndELement namspaceURI qualified Name");
+    if ([elementName isEqualToString:@"LoanCalculator"]) {
+        NSLog(@"loancalculator!!!!");
+        return;
+    }
+    if ([elementName isEqualToString:@"emi"]) {
+        //add the object
+    }
+    if ([elementName isEqualToString:@"totalPayment"]) {
+        //add the object
+    }
+}
+
+- (void) startParsing:(NSString *)myXMLString {
+    NSData *xmlData = [myXMLString dataUsingEncoding:NSUnicodeStringEncoding];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlData];
+    [parser setDelegate:self];
+    [parser parse];
+}
 @end

@@ -231,12 +231,12 @@
 		22546F511626822700FCD8DF /* Tip */ = {
 			isa = PBXGroup;
 			children = (
+				22546F5316268BCA00FCD8DF /* TipCalculatorClass.h */,
+				22546F5416268BCA00FCD8DF /* TipCalculatorClass.m */,
 				2290A4F216098C0D0063D30E /* TipViewController.h */,
 				2290A4F316098C0D0063D30E /* TipViewController.m */,
 				2264FBF91601BACC00517600 /* TipResultViewController.h */,
 				2264FBFA1601BACC00517600 /* TipResultViewController.m */,
-				22546F5316268BCA00FCD8DF /* TipCalculatorClass.h */,
-				22546F5416268BCA00FCD8DF /* TipCalculatorClass.m */,
 			);
 			name = Tip;
 			sourceTree = "<group>";

@@ -33,11 +33,6 @@
 
 - (void)viewDidLoad
 {
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.bounds];
-    UIImage *bgImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
     self.calculatedEmi.text = [NSString stringWithFormat:@"%@", [self.Emi description]];
     
     self.calculatedInterest.text = [NSString stringWithFormat:@"%@", [self.Interest description]];

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "TipResultViewController.h"
-#import "TipCalculatorClass.h"
+//#import "TipCalculatorClass.h"
 #import "constants.h"
 
 
 extern NSString * const TipResultPage;
+extern NSString * const jsonKeyForTip;
+extern NSString * const jsonKeyForTotalAmount;
 
 @interface TipViewController : UIViewController{
     
@@ -25,6 +27,7 @@ extern NSString * const TipResultPage;
     UITextField *activeField;
     UILabel *warningForBill;
     UIScrollView *scrollView;
+    NSMutableData *receivedData;
 }
 @property (nonatomic, retain) IBOutlet UILabel *warningForBill;
 @property (nonatomic, retain) IBOutlet UITextField *billAmount;  
@@ -36,7 +39,7 @@ extern NSString * const TipResultPage;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 - (IBAction) sliderValueChanged:(id)sender; 
-- (IBAction) getCalculatedTip:(id)sender;
+- (IBAction) getCalculatedTip;
 - (IBAction) backgroundTouchedHideKeyboard:(id)sender;
 - (void) checkAndChangeSlider;
 - (void) changeButtonStatus;

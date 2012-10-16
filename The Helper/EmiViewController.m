@@ -9,6 +9,9 @@
 #import "EmiViewController.h"
 
 NSString * const EmiResultPage = @"SendLoanInfo";
+NSString * const xmlTagForEmi = @"emi";
+NSString * const xmlTagForTotalInterest = @"totalInterest";
+NSString * const xmlTagForTotalPayment = @"totalPayment";
 
 @interface EmiViewController ()
 
@@ -28,21 +31,85 @@ NSString * const EmiResultPage = @"SendLoanInfo";
 @synthesize warningForPrincipal;
 
 //This function collects and returns to the view controller the calculated values.
-- (void)getCalculatedLoan:(id)sender
+- (void)getCalculatedLoan
 {
-    
-    EmiCalculatorClass *calculatorObject = [[EmiCalculatorClass alloc]init];
     long int principal = [[principalAmount text] longLongValue];  
     float rate = [[rateAmount text] floatValue];
     int time = [[loanTerm text] intValue];
-    //call the function to calculate emi
-    emi = [calculatorObject calculate:principal Emi:rate formula:time];
-    //call the function to calculate total Interest
-    totalInterest = [calculatorObject calculate:time totalInterest:principal];   
-    // call the function to calculate total Payment
-    totalPayment = [calculatorObject calculateTotalPayment:principal];
-}  
+    /******************************************************************
+     This is the part of code that passes the values to remote php page
+     *****************************************************************/
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/PhpProject2/emiServerSideCalculation.php?principal=%ld&rate=%f&time=%d", principal, rate, time]]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Current-Type"];
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if (theConnection) {
+        receivedData = [NSMutableData data];
+        NSString *receivedDataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    }
+}
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    // This method is called when the server has determined that it
+    // has enough information to create the NSURLResponse.
+    [receivedData setLength:0];
+    NSLog(@"Connection didReceiveResponse - %@", receivedData);
+}
 
+- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [receivedData appendData:data];
+    NSString *receivedDataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    NSLog(@"Connection didReceiveDataString - %@", receivedDataString);
+    NSData *xmlData = [receivedDataString dataUsingEncoding:NSUnicodeStringEncoding];
+    if ([xmlData length] == 0) {
+        NSLog(@"empty stirng.. :(");
+    }
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:receivedData];
+    [parser setDelegate:self];
+    [parser parse];
+    
+}
+
+- (void) connectionDidFinishLaunching:(NSURLConnection *)connection {
+    NSLog(@"Succeeded! Received __ bytes of data");
+}
+
+- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"Connection failed! Error - %@ %@", [error localizedDescription], [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+}
+
+- (void) parser:(NSXMLParser *) parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    currentString = nil;
+    }
+
+- (void) parser: (NSXMLParser *) parser foundCharacters:(NSString *)string {
+    if (!currentString) {
+        currentString = [[NSMutableString alloc] initWithCapacity:50];
+    }
+    currentString = [NSMutableString stringWithFormat:@"%@", string];
+    // do some action
+}
+
+- (void) parser: (NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    if ([elementName isEqualToString:xmlTagForEmi]) {
+        //add the object
+        Emi = [currentString intValue];
+        NSLog(@"emi = %ld", Emi);
+    }
+    if ([elementName isEqualToString:xmlTagForTotalInterest]) {
+        totalInterest = [currentString intValue];
+    }
+    if ([elementName isEqualToString:xmlTagForTotalPayment]) {
+        //add the object
+        totalPayment = [currentString intValue];
+        NSLog(@"totalpayment = %ld", totalPayment);
+    }
+}
+
+- (void) parser: (NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    NSLog(@"error occured : %@", parseError);
+}
 // This function is for changing the slider when user enters a value into the related text field. - This function also includes the validation for the text filed entry.
 
 - (void) checkAndChangeSlider {
@@ -59,11 +126,13 @@ NSString * const EmiResultPage = @"SendLoanInfo";
 
 - (IBAction) sliderValueChanged:(UISlider *)sender {
     rateAmount.text = [NSString stringWithFormat:@"%.1f", [sender value]];
+    [self changeButtonStatus];
 }
 
 // This function ensures that the user is able to click the button only after all the required entries are made. 
 - (void) changeButtonStatus {
     if (!([principalAmount.text isEqualToString:@""] || [rateAmount.text isEqualToString:@""] || [loanTerm.text isEqualToString:@""])) {
+        [self getCalculatedLoan];
         calculateButton.enabled = YES;
         calculateButton.alpha = enableValue;
     }
@@ -134,7 +203,7 @@ NSString * const EmiResultPage = @"SendLoanInfo";
  -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:EmiResultPage]) {
         EmiResultViewController *emiObject = [segue destinationViewController];
-        emiObject.Emi = [NSNumber numberWithInteger:emi];
+        emiObject.Emi = [NSNumber numberWithInteger:Emi];
         emiObject.Interest = [NSNumber numberWithInteger:totalInterest];
         emiObject.Payment = [NSNumber numberWithInteger:totalPayment];
     }

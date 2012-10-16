@@ -8,6 +8,8 @@
 
 #import "TipViewController.h"
 NSString * const TipResultPage = @"SendTipInfo";
+NSString * const jsonKeyForTip = @"tip";
+NSString * const jsonKeyForTotalAmount = @"totalAmount";
 
 @interface TipViewController ()
 
@@ -25,15 +27,47 @@ NSString * const TipResultPage = @"SendTipInfo";
 @synthesize scrollView;
 
 
-- (void)getCalculatedTip:(id)sender
-{  
-    TipCalculatorClass *calculateObject=[[TipCalculatorClass alloc]init];
+- (void)getCalculatedTip
+{
     long int amount = [[billAmount text] longLongValue];
     float rate = [[tipRate text] floatValue];
-    //call the function to calculate the tip
-    tipToGive = [calculateObject calculate:amount Tip:rate];
-    totalAmount = [calculateObject calculateTotalBill:amount];
+    /******************************************************************
+     This is the part of code that passes the values to remote php page
+     *****************************************************************/
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/PhpProject2/tipServerSideCalculation.php?billAmount=%ld&tipRate=%f", amount, rate]]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Current-Type"];
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if (theConnection) {
+        receivedData = [NSMutableData data];
+        //NSString *receivedDataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    }
 }  
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    // This method is called when the server has determined that it
+    // has enough information to create the NSURLResponse.
+    [receivedData setLength:0];
+}
+
+- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [receivedData appendData:data];
+    NSString *receivedDataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    NSData *jsonData = [receivedDataString dataUsingEncoding:NSUnicodeStringEncoding];
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    NSDictionary *tipCalculator = [json objectForKey:@"TipCalculator"];
+    tipToGive = [[tipCalculator objectForKey:jsonKeyForTip] floatValue];
+    totalAmount = [[tipCalculator objectForKey:jsonKeyForTotalAmount] floatValue];
+}
+
+- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"Connection failed! Error - %@ %@", [error localizedDescription], [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+}
+
 // This function is for changing the slider when user enters a value into the related text field. - This function also includes the validation for the text filed entry.
 
 - (void) checkAndChangeSlider {
@@ -50,6 +84,8 @@ NSString * const TipResultPage = @"SendTipInfo";
 
 - (IBAction) sliderValueChanged:(UISlider *)sender {
     tipRate.text = [NSString stringWithFormat:@"%.1f", [sender value]];
+    //changeButtonStatus function is called to enable the button so that user doesn't have to touch background to enable button - cos otherwise the function is called only when background is touched.
+    [self changeButtonStatus];
 }
 
 - (BOOL) isNumeric:(NSString *)text {
@@ -88,6 +124,7 @@ NSString * const TipResultPage = @"SendTipInfo";
 }
 - (void) changeButtonStatus {
     if (!([billAmount.text isEqualToString:@""] || [tipRate.text isEqualToString:@""])) {
+        [self getCalculatedTip];
         tipCalculateButton.enabled = YES;
         tipCalculateButton.alpha = enableValue;
     } 

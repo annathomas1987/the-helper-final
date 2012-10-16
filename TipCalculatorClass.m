@@ -34,6 +34,7 @@
         NSLog(@"received Data String = %@", receivedDataString);
         
     }
+    NSLog(@"Tip is returned now..");
     return Tip;
 }
 
@@ -60,6 +61,7 @@
     Tip = [[tipCalculator objectForKey:@"tip"] floatValue];
     NSLog(@"integer value : %f", Tip);
     totalAmount = [[tipCalculator objectForKey:@"tip"] floatValue];
+    NSLog(@"json-wala tip is calculated now..");
 }
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

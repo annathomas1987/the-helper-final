@@ -75,7 +75,7 @@
     if ([xmlData length] == 0) {
         NSLog(@"empty stirng.. :(");
     }
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlData];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:receivedData];
     [parser setDelegate:self];
     [parser parse];
     
@@ -94,39 +94,45 @@
 }
 
 - (void) parser:(NSXMLParser *) parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-    NSLog(@"inside parserdidStarteELement");
     if ([elementName isEqualToString:@"LoanCalculator"]) {
         //do nothing
-        NSLog(@"got the tag LoanCalculator");
+        totalInterest = [[attributeDict valueForKey:@"totalInterest"] integerValue];
+        NSLog(@"totalInterest = %d", totalInterest);
     }
     if ([elementName isEqualToString:@"emi"]) {
         //assign tip to tip
-        NSLog(@"got the tag emi");
+        Emi = [[attributeDict valueForKey:@"emi"]integerValue];
+        NSLog(@"emi = %d",Emi);
     }
     if ([elementName isEqualToString:@"totalPayment"]) {
         //assign totalAmount to totalAmount
-        NSLog(@"got the tag totalPayment");
+        totalPayment = [[attributeDict valueForKey:@"totalPayment"] integerValue];
+        NSLog(@"totalPayment = %d", totalPayment);
     }
 }
 
 - (void) parser: (NSXMLParser *) parser foundCharacters:(NSString *)string {
-    
+    if (!currentString) {
+        currentString = [[NSMutableString alloc] initWithCapacity:50];
+    }
+    currentString = [NSMutableString stringWithFormat:@"%@",string];
     // do some action
-    NSLog(@"inside parser foundcharacters");
 }
 
 - (void) parser: (NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     //ignore root and empty elements
-    NSLog(@"inside parser didEndELement namspaceURI qualified Name");
     if ([elementName isEqualToString:@"LoanCalculator"]) {
-        NSLog(@"loancalculator!!!!");
         return;
     }
     if ([elementName isEqualToString:@"emi"]) {
         //add the object
+        Emi = [currentString intValue];
+        NSLog(@"emi = %d", Emi);
     }
     if ([elementName isEqualToString:@"totalPayment"]) {
         //add the object
+        totalPayment = [currentString intValue];
+        NSLog(@"totalpayment = %d", totalPayment);
     }
 }
 

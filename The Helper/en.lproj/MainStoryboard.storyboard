@@ -24,7 +24,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="getCalculatedLoan:" destination="2" eventType="touchUpInside" id="eZ6-yJ-9Y1"/>
                                     <segue destination="1F7-t4-sgb" kind="push" identifier="SendLoanInfo" id="fSa-sF-2J2"/>
                                 </connections>
                             </button>
@@ -162,7 +161,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.8954174963" blue="0.42808047580000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="jIF-6h-pNy">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Fwz-w2-DPi"/>
@@ -220,7 +219,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="getCalculatedTip:" destination="3" eventType="touchUpInside" id="J6S-pu-2VM"/>
                                     <segue destination="KsG-3b-usk" kind="push" identifier="SendTipInfo" id="MOT-Mh-fKC"/>
                                 </connections>
                             </button>
@@ -357,7 +355,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.8954174963" blue="0.42808047580000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Loan Calculator" id="C6l-cw-fPC">
                         <barButtonItem key="backBarButtonItem" title="Back" id="mh6-PT-RgR"/>
@@ -429,7 +427,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EmiViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
-                <relationship kind="action" name="getCalculatedLoan:"/>
+                <relationship kind="action" name="getCalculatedLoan"/>
                 <relationship kind="action" name="keyboardDidHide:" candidateClass="NSNotification"/>
                 <relationship kind="action" name="keyboardDidShow:" candidateClass="NSNotification"/>
                 <relationship kind="action" name="sliderValueChanged:"/>
@@ -458,7 +456,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TipViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
-                <relationship kind="action" name="getCalculatedTip:"/>
+                <relationship kind="action" name="getCalculatedTip"/>
                 <relationship kind="action" name="sliderValueChanged:"/>
                 <relationship kind="action" name="textFieldDidBeginEditing:" candidateClass="UITextField"/>
                 <relationship kind="action" name="textFieldDidEndEditing:" candidateClass="UITextField"/>

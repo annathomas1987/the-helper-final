@@ -28,7 +28,6 @@
 		2248FE2F1601A062001E4718 /* The_HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE2E1601A062001E4718 /* The_HelperTests.m */; };
 		2248FE3E1601B2CC001E4718 /* EmiResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248FE3D1601B2CC001E4718 /* EmiResultViewController.m */; };
 		22546F4E1626802F00FCD8DF /* EmiCalculatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 22546F4D1626802F00FCD8DF /* EmiCalculatorClass.m */; };
-		22546F5516268BCA00FCD8DF /* TipCalculatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 22546F5416268BCA00FCD8DF /* TipCalculatorClass.m */; };
 		2264FBFB1601BACC00517600 /* TipResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2264FBFA1601BACC00517600 /* TipResultViewController.m */; };
 		228A51F516252C1600DE89AF /* calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 228A51F416252C1600DE89AF /* calculator.png */; };
 		228A51F716252D5A00DE89AF /* icon 144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 228A51F616252D5A00DE89AF /* icon 144x144.png */; };
@@ -86,8 +85,6 @@
 		2248FE3D1601B2CC001E4718 /* EmiResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmiResultViewController.m; path = "The Helper/EmiResultViewController.m"; sourceTree = "<group>"; };
 		22546F4C1626802F00FCD8DF /* EmiCalculatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmiCalculatorClass.h; sourceTree = "<group>"; };
 		22546F4D1626802F00FCD8DF /* EmiCalculatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmiCalculatorClass.m; sourceTree = "<group>"; };
-		22546F5316268BCA00FCD8DF /* TipCalculatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipCalculatorClass.h; sourceTree = "<group>"; };
-		22546F5416268BCA00FCD8DF /* TipCalculatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipCalculatorClass.m; sourceTree = "<group>"; };
 		2264FBF91601BACC00517600 /* TipResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TipResultViewController.h; path = "The Helper/TipResultViewController.h"; sourceTree = "<group>"; };
 		2264FBFA1601BACC00517600 /* TipResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TipResultViewController.m; path = "The Helper/TipResultViewController.m"; sourceTree = "<group>"; };
 		228A51F416252C1600DE89AF /* calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calculator.png; sourceTree = "<group>"; };
@@ -231,8 +228,6 @@
 		22546F511626822700FCD8DF /* Tip */ = {
 			isa = PBXGroup;
 			children = (
-				22546F5316268BCA00FCD8DF /* TipCalculatorClass.h */,
-				22546F5416268BCA00FCD8DF /* TipCalculatorClass.m */,
 				2290A4F216098C0D0063D30E /* TipViewController.h */,
 				2290A4F316098C0D0063D30E /* TipViewController.m */,
 				2264FBF91601BACC00517600 /* TipResultViewController.h */,
@@ -397,7 +392,6 @@
 				2290A4F516098C0D0063D30E /* TipViewController.m in Sources */,
 				2290A4FA16098C860063D30E /* constants.m in Sources */,
 				22546F4E1626802F00FCD8DF /* EmiCalculatorClass.m in Sources */,
-				22546F5516268BCA00FCD8DF /* TipCalculatorClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

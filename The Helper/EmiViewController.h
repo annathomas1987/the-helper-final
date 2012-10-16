@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "EmiResultViewController.h"
-#import "EmiCalculatorClass.h"
+//#import "EmiCalculatorClass.h"
 #import "constants.h"
 
 extern NSString * const EmiResultPage;
+extern NSString * const xmlTagForEmi;
+extern NSString * const xmlTagForTotalInterest;
+extern NSString * const xmlTagForTotalPayment;
 
-@interface EmiViewController : UIViewController {
+@interface EmiViewController : UIViewController <NSXMLParserDelegate> {
 
     UITextField *principalAmount;  
     UILabel     *rateLabel;
@@ -23,10 +26,12 @@ extern NSString * const EmiResultPage;
     UIButton *calculateButton;
     UILabel *warningForLoan;
     UILabel *warningForPrincipal;
-    long int emi, totalInterest, totalPayment;
+    long int Emi, totalInterest, totalPayment;
     BOOL keyboardShown, viewMoved;
     UIScrollView *scrollView;
     UITextField *activeField;
+    NSMutableData *receivedData;
+    NSMutableString *currentString;
 }
 @property (nonatomic, retain) IBOutlet UILabel *warningForPrincipal;
 @property (nonatomic, retain) IBOutlet UILabel *warningForLoan;
@@ -41,7 +46,7 @@ extern NSString * const EmiResultPage;
 
 
 - (IBAction) sliderValueChanged:(id)sender;
-- (IBAction) getCalculatedLoan:(id)sender;
+- (IBAction) getCalculatedLoan;
 - (IBAction) backgroundTouchedHideKeyboard:(id)sender;
 - (void) checkAndChangeSlider;
 - (void) changeButtonStatus;

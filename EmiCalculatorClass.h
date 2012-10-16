@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "constants.h"
 
-@interface EmiCalculatorClass : NSObject {
+@interface EmiCalculatorClass : NSObject <NSXMLParserDelegate> {
 
     int Emi, totalPayment, totalInterest;
     NSMutableData *receivedData;
+    NSMutableString *currentString;
     
 }
 

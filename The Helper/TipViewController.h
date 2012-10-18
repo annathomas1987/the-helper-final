@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TipResultViewController.h"
-//#import "TipCalculatorClass.h"
+#import "TipCalculatorClass.h"
 #import "constants.h"
 
 
 extern NSString * const TipResultPage;
-extern NSString * const jsonKeyForTip;
-extern NSString * const jsonKeyForTotalAmount;
 
 @interface TipViewController : UIViewController{
     
@@ -28,6 +26,7 @@ extern NSString * const jsonKeyForTotalAmount;
     UILabel *warningForBill;
     UIScrollView *scrollView;
     NSMutableData *receivedData;
+    TipCalculatorClass *calculateObject;
 }
 @property (nonatomic, retain) IBOutlet UILabel *warningForBill;
 @property (nonatomic, retain) IBOutlet UITextField *billAmount;  
@@ -47,4 +46,5 @@ extern NSString * const jsonKeyForTotalAmount;
 - (IBAction) textFieldDidBeginEditing:(UITextField *)textField;
 - (IBAction) textFieldDidEndEditing:(UITextField *)textField;
 - (BOOL) isNumeric:(NSString *) text;
+- (void) establishConnection;
 @end

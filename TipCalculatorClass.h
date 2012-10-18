@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "constants.h"
+#import "TipConnectionClass.h"
 
 @interface TipCalculatorClass : NSObject {
     
     float Tip, totalAmount;
     NSMutableData *receivedData;
+    long int Bill;
+    float Rate;
+    TipConnectionClass *connectionObject;
 }
 
-- (float) calculate:(long int)billAmount Tip: (float)tipRate;
-- (float) calculateTotalBill:(long int)amount;
+- (void) setData:(long int)receivedBill :(float)receivedRate;
+- (void) initiateConnectionToServer;
+- (float) getTip;
+- (float) getTotalBill;
 
 @end

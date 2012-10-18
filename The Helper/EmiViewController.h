@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "EmiResultViewController.h"
-//#import "EmiCalculatorClass.h"
+#import "EmiCalculatorClass.h"
 #import "constants.h"
 
 extern NSString * const EmiResultPage;
-extern NSString * const xmlTagForEmi;
-extern NSString * const xmlTagForTotalInterest;
-extern NSString * const xmlTagForTotalPayment;
+//extern NSString * const xmlTagForEmi;
+//extern NSString * const xmlTagForTotalInterest;
+//extern NSString * const xmlTagForTotalPayment;
 
 @interface EmiViewController : UIViewController <NSXMLParserDelegate> {
 
@@ -32,6 +32,7 @@ extern NSString * const xmlTagForTotalPayment;
     UITextField *activeField;
     NSMutableData *receivedData;
     NSMutableString *currentString;
+    EmiCalculatorClass *calculateObject;
 }
 @property (nonatomic, retain) IBOutlet UILabel *warningForPrincipal;
 @property (nonatomic, retain) IBOutlet UILabel *warningForLoan;
@@ -56,6 +57,7 @@ extern NSString * const xmlTagForTotalPayment;
 - (IBAction) textFieldDidBeginEditing:(UITextField *)textField;
 - (IBAction) textFieldDidEndEditing:(UITextField *)textField;
 - (BOOL) isNumeric:(NSString *) text;
+- (void) establishConnection;
 
 @end
 

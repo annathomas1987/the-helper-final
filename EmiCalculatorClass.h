@@ -8,24 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "constants.h"
+#import "EmiConnectionClass.h"
 
 @interface EmiCalculatorClass : NSObject <NSXMLParserDelegate> {
-
-    int Emi, totalPayment, totalInterest;
+    
+    long int principal;
+    float rate;
+    int time;
+    long int Emi, totalPayment, totalInterest;
     NSMutableData *receivedData;
     NSMutableString *currentString;
-    
+    EmiConnectionClass *connectionObject;
 }
 
 @property (nonatomic, retain) NSData *receivedData;
 
-- (int) calculate:(long int)principal Emi:(float)rate formula:(int)time;
-- (int) calculate:(int)time totalInterest:(long int)principal;
-- (int) calculateTotalPayment:(long int)principal;
-- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
-- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
-- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
-- (void) connectionDidFinishLaunching:(NSURLConnection *) connection;
-- (void) startParsing:(NSString *)myXMLString;
+- (void) initiateConnectionToServer;
+- (void) setData:(long int)receivedPrincipal :(float)receivedRate :(int)receivedTime;
+- (int) getEmiValue;
+- (int) getTotalInterest;
+- (int) getTotalPayment;
 
 @end
